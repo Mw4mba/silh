@@ -4,9 +4,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Logo from './Logo';
 import { useTranslation, type Language } from '../i18n/I18nContext';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
   const { language, setLanguage, t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const menuRef = useRef<HTMLDivElement>(null);
@@ -93,6 +95,24 @@ export default function Navbar() {
           <span className="block h-0.5 w-6 bg-white transition-all group-hover:w-4"></span>
         </button>
 
+        {/* Theme Toggle Button - Top Center */}
+        <button
+          onClick={toggleTheme}
+          className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-all group mt-6"
+          aria-label="Toggle theme"
+          title={theme === 'default' ? 'Switch to monochrome' : 'Switch to color'}
+        >
+          {theme === 'default' ? (
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          )}
+        </button>
+
         {/* Logo at Bottom */}
         <div className="mb-2">
           <Logo variant="light" size="sm" rotate={true} />
@@ -150,6 +170,24 @@ export default function Navbar() {
             </React.Fragment>
           ))}
         </div>
+
+        {/* Center - Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="absolute left-1/2 -translate-x-1/2 p-2 rounded-full hover:bg-[#2E7D32]/10 transition-all group"
+          aria-label="Toggle theme"
+          title={theme === 'default' ? 'Switch to monochrome' : 'Switch to color'}
+        >
+          {theme === 'default' ? (
+            <svg className="w-5 h-5 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          )}
+        </button>
 
         {/* Mobile Hamburger (Right) */}
         <button

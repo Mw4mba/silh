@@ -1,6 +1,7 @@
 'use client';
 
 import { I18nProvider } from './i18n/I18nContext';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
@@ -11,16 +12,18 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <I18nProvider>
-      <main className="w-full overflow-x-hidden">
-        <Navbar />
-        <HeroSection />
-        <ServicesSection />
-        <InsightsSection />
-        <ProjectsSection />
-        <CTASection />
-        <Footer />
-      </main>
-    </I18nProvider>
+    <ThemeProvider>
+      <I18nProvider>
+        <main className="w-full overflow-x-hidden">
+          <Navbar />
+          <HeroSection />
+          <ServicesSection />
+          <InsightsSection />
+          <ProjectsSection />
+          <CTASection />
+          <Footer />
+        </main>
+      </I18nProvider>
+    </ThemeProvider>
   );
 }
