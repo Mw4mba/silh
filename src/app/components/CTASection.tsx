@@ -3,10 +3,12 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from '../i18n/I18nContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CTASection() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -47,10 +49,10 @@ export default function CTASection() {
 
       <div ref={contentRef} className="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6">
-          Lead and <span className="font-semibold">grow</span>
+          {t.cta.title} <span className="font-semibold">{t.cta.titleBold}</span>
         </h2>
         <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-          What if you could build a career that's as unique as you? With us you can.
+          {t.cta.subtitle}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -58,7 +60,7 @@ export default function CTASection() {
             href="#"
             className="group px-10 py-5 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
-            <span>Search and apply</span>
+            <span>{t.cta.searchApply}</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -67,7 +69,7 @@ export default function CTASection() {
             href="#"
             className="group px-10 py-5 bg-transparent text-white font-medium rounded-sm border-2 border-white hover:bg-white hover:text-[#2E7D32] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
-            <span>Life at Silh</span>
+            <span>{t.cta.lifeAt}</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -78,15 +80,15 @@ export default function CTASection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-16 border-t border-white/30">
           <div>
             <p className="text-5xl font-light text-white mb-2">12,000+</p>
-            <p className="text-white/80 font-light">Employees worldwide</p>
+            <p className="text-white/80 font-light">{t.cta.stats.employees}</p>
           </div>
           <div>
             <p className="text-5xl font-light text-white mb-2">45+</p>
-            <p className="text-white/80 font-light">Countries</p>
+            <p className="text-white/80 font-light">{t.cta.stats.countries}</p>
           </div>
           <div>
             <p className="text-5xl font-light text-white mb-2">1,200+</p>
-            <p className="text-white/80 font-light">Active projects</p>
+            <p className="text-white/80 font-light">{t.cta.stats.projects}</p>
           </div>
         </div>
       </div>

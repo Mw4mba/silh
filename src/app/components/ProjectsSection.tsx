@@ -3,53 +3,33 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from '../i18n/I18nContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Project {
-  id: number;
-  title: string;
-  location: string;
-  category: string;
-  description: string;
-  image: string;
-  year: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Copenhagen Waterfront District',
-    location: 'Denmark',
-    category: 'Mixed-Use Development',
-    description: 'A climate-adaptive waterfront district integrating green roofs, tidal parks, and carbon-neutral buildings that set new standards for urban resilience.',
-    image: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2069&auto=format&fit=crop',
-    year: '2025',
-  },
-  {
-    id: 2,
-    title: 'Stockholm Central Station Expansion',
-    location: 'Sweden',
-    category: 'Transport Infrastructure',
-    description: 'Modernizing a heritage structure with seismic retrofitting and energy-efficient systems while preserving its architectural character.',
-    image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?q=80&w=2073&auto=format&fit=crop',
-    year: '2024',
-  },
-  {
-    id: 3,
-    title: 'Green Valley Business Park',
-    location: 'France',
-    description: 'A net-zero office campus featuring biomimetic facades, rainwater harvesting, and integrated biodiversity corridors.',
-    category: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
-    year: '2024',
-  },
-];
-
 export default function ProjectsSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const projects = [
+    {
+      id: 1,
+      ...t.projects.items.copenhagen,
+      image: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2069&auto=format&fit=crop',
+    },
+    {
+      id: 2,
+      ...t.projects.items.stockholm,
+      image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?q=80&w=2073&auto=format&fit=crop',
+    },
+    {
+      id: 3,
+      ...t.projects.items.greenValley,
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -89,10 +69,10 @@ export default function ProjectsSection() {
           ref={titleRef}
           className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 text-center"
         >
-          Pioneering <span className="font-semibold">projects</span>
+          {t.projects.title}
         </h2>
         <p className="text-center text-white/80 text-lg mb-16 max-w-3xl mx-auto font-light">
-          Across the globe, we work with clients to dream big, challenge conventions and transform our world for the better.
+          {t.projects.subtitle}
         </p>
 
         <div className="space-y-12">
@@ -121,7 +101,7 @@ export default function ProjectsSection() {
               </div>
 
               <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <p className="text-[#A5D6A7] text-sm font-semibold mb-2">{project.location} • {project.year}</p>
+                <p className="text-[#A5D6A7] text-sm font-semibold mb-2">{project.location}</p>
                 <h3 className="text-4xl font-light text-white mb-4">
                   {project.title}
                 </h3>
@@ -133,7 +113,7 @@ export default function ProjectsSection() {
                   href="#"
                   className="inline-flex items-center gap-2 text-white font-medium border-b-2 border-white/40 hover:border-white pb-1 group-hover:gap-4 transition-all"
                 >
-                  <span>View project</span>
+                  <span>{t.projects.viewProject}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

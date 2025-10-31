@@ -2,8 +2,10 @@
 
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useTranslation } from '../i18n/I18nContext';
 
 export default function HeroSection() {
+  const { t } = useTranslation();
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -54,16 +56,16 @@ export default function HeroSection() {
           ref={titleRef}
           className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-8 leading-tight tracking-tight"
         >
-          Together, we engineer
+          {t.hero.title}
           <br />
-          <span className="font-semibold">a liveable future</span>
+          <span className="font-semibold">{t.hero.titleBold}</span>
         </h1>
 
         <p
           ref={subtitleRef}
           className="text-lg md:text-xl lg:text-2xl text-white/90 mb-12 max-w-4xl mx-auto font-light leading-relaxed"
         >
-          Combining future-focused thinking and technical excellence to create sustainable infrastructure that shapes communities for generations.
+          {t.hero.subtitle}
         </p>
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center">
@@ -71,7 +73,7 @@ export default function HeroSection() {
             href="#services"
             className="group px-10 py-5 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
-            <span>What we do</span>
+            <span>{t.hero.ctaWhatWeDo}</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -80,7 +82,7 @@ export default function HeroSection() {
             href="#projects"
             className="group px-10 py-5 bg-transparent text-white font-medium rounded-sm border-2 border-white hover:bg-white hover:text-[#2E7D32] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
-            <span>Our projects</span>
+            <span>{t.hero.ctaProjects}</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

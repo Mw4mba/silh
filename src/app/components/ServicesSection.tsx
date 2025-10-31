@@ -3,52 +3,38 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from '../i18n/I18nContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  insights: string[];
-}
-
-const services: Service[] = [
-  {
-    id: 1,
-    title: 'Sustainable Architecture',
-    description: 'We design buildings that harmonize with their environment, integrating passive strategies, renewable energy, and biophilic principles to create spaces that nurture well-being while minimizing ecological impact.',
-    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2070&auto=format&fit=crop',
-    insights: ['LEED & BREEAM', 'Net-Zero Design', 'Circular Economy'],
-  },
-  {
-    id: 2,
-    title: 'Structural Engineering',
-    description: 'Our engineering teams deliver innovative structural solutions that balance safety, efficiency, and sustainability. From seismic resilience to lightweight materials, we push the boundaries of what is possible.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
-    insights: ['Advanced Analysis', 'Seismic Design', 'Innovation'],
-  },
-  {
-    id: 3,
-    title: 'BIM-Based Workflow',
-    description: 'Leveraging Building Information Modeling, we streamline collaboration across disciplines, reduce errors, and optimize project outcomes from concept through construction and beyond.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
-    insights: ['Digital Twins', 'Clash Detection', 'Lifecycle Mgmt'],
-  },
-  {
-    id: 4,
-    title: 'Climate Adaptation',
-    description: 'We help clients prepare for a changing climate through infrastructure resilience, flood mitigation, heat island reduction, and nature-based solutions that protect communities.',
-    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070&auto=format&fit=crop',
-    insights: ['Flood Resilience', 'Heat Mitigation', 'Green Infrastructure'],
-  },
-];
-
 export default function ServicesSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const services = [
+    {
+      id: 1,
+      ...t.services.items.sustainable,
+      image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+      id: 2,
+      ...t.services.items.structural,
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+      id: 3,
+      ...t.services.items.bim,
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+      id: 4,
+      ...t.services.items.climate,
+      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070&auto=format&fit=crop',
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -88,10 +74,10 @@ export default function ServicesSection() {
           ref={titleRef}
           className="text-4xl md:text-5xl lg:text-6xl font-light text-[#2E7D32] mb-6 text-center"
         >
-          Shaping the <span className="font-semibold">future</span>
+          {t.services.title}
         </h2>
         <p className="text-center text-[#37474F]/70 text-lg mb-16 max-w-3xl mx-auto font-light">
-          We combine future-focused thinking and technical know-how to power local impact.
+          {t.services.subtitle}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -135,7 +121,7 @@ export default function ServicesSection() {
                   href="#"
                   className="inline-flex items-center gap-2 text-[#2E7D32] font-medium group-hover:gap-4 transition-all"
                 >
-                  <span>Learn more</span>
+                  <span>{t.services.learnMore}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

@@ -3,15 +3,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Logo from './Logo';
+import { useTranslation, type Language } from '../i18n/I18nContext';
 
-type Language = 'EN' | 'FR' | 'SV';
-
-interface NavbarProps {
-  currentLang: Language;
-  onLanguageChange: (lang: Language) => void;
-}
-
-export default function Navbar({ currentLang, onLanguageChange }: NavbarProps) {
+export default function Navbar() {
+  const { language, setLanguage, t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const menuRef = useRef<HTMLDivElement>(null);
@@ -19,10 +14,10 @@ export default function Navbar({ currentLang, onLanguageChange }: NavbarProps) {
 
   const languages: Language[] = ['EN', 'FR', 'SV'];
   const menuItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: t.navbar.services, href: '#services' },
+    { label: t.navbar.projects, href: '#projects' },
+    { label: t.navbar.about, href: '#about' },
+    { label: t.navbar.contact, href: '#contact' },
   ];
 
   useEffect(() => {
@@ -50,7 +45,7 @@ export default function Navbar({ currentLang, onLanguageChange }: NavbarProps) {
   };
 
   const handleLanguageClick = (lang: Language) => {
-    onLanguageChange(lang);
+    setLanguage(lang);
   };
 
   return (
@@ -142,7 +137,7 @@ export default function Navbar({ currentLang, onLanguageChange }: NavbarProps) {
               <button
                 onClick={() => handleLanguageClick(lang)}
                 className={`text-sm font-medium tracking-wider transition-colors ${
-                  lang === currentLang
+                  lang === language
                     ? 'text-[#2E7D32]'
                     : 'text-[#37474F]/50 hover:text-[#37474F]'
                 }`}

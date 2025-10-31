@@ -3,49 +3,33 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from '../i18n/I18nContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Insight {
-  id: number;
-  title: string;
-  category: string;
-  excerpt: string;
-  image: string;
-  date: string;
-}
-
-const insights: Insight[] = [
-  {
-    id: 1,
-    title: 'Designing for Climate Resilience in Urban Environments',
-    category: 'Climate',
-    excerpt: 'How nature-based solutions and green infrastructure are transforming city resilience strategies.',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop',
-    date: 'October 2025',
-  },
-  {
-    id: 2,
-    title: 'The Future of Structural Engineering: Carbon-Negative Materials',
-    category: 'Innovation',
-    excerpt: 'Exploring bio-based composites and engineered timber that sequester more carbon than they emit.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
-    date: 'September 2025',
-  },
-  {
-    id: 3,
-    title: 'BIM to Digital Twin: Bridging Design and Operations',
-    category: 'Technology',
-    excerpt: 'Leveraging digital twins for predictive maintenance and lifecycle optimization of built assets.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
-    date: 'August 2025',
-  },
-];
-
 export default function InsightsSection() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  const insights = [
+    {
+      id: 1,
+      ...t.insights.items.climate,
+      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+      id: 2,
+      ...t.insights.items.materials,
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+    },
+    {
+      id: 3,
+      ...t.insights.items.digitalTwin,
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+    },
+  ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -85,10 +69,10 @@ export default function InsightsSection() {
           ref={titleRef}
           className="text-4xl md:text-5xl lg:text-6xl font-light text-[#2E7D32] mb-6 text-center"
         >
-          Innovative <span className="font-semibold">thinking</span>
+          {t.insights.title}
         </h2>
         <p className="text-center text-[#37474F]/70 text-lg mb-16 max-w-3xl mx-auto font-light">
-          Insights and perspectives from our experts shaping the future of sustainable infrastructure.
+          {t.insights.subtitle}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -126,7 +110,7 @@ export default function InsightsSection() {
                   href="#"
                   className="inline-flex items-center gap-2 text-[#2E7D32] font-semibold text-sm group-hover:gap-4 transition-all"
                 >
-                  <span>Read article</span>
+                  <span>{t.insights.readArticle}</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -141,7 +125,7 @@ export default function InsightsSection() {
             href="#"
             className="inline-flex items-center gap-3 px-8 py-4 bg-[#2E7D32] text-white font-medium rounded-sm hover:bg-[#1b5e20] transition-all shadow-lg hover:shadow-xl"
           >
-            <span>Read all insights</span>
+            <span>{t.insights.readAll}</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
