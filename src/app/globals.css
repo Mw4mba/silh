@@ -1,26 +1,192 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Brand Colors */
+  --forest-green: #2E7D32;
+  --sage: #A5D6A7;
+  --earth-beige: #F5F5DC;
+  --sky-blue: #81D4FA;
+  --charcoal: #37474F;
+  
+  --background: #F5F5DC;
+  --foreground: #37474F;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Angular shapes using clip-path */
+.skew-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.skew-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.angle-bottom-left {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.angle-bottom-right {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 85%);
+}
+
+.angle-top-right {
+  clip-path: polygon(5% 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+.angle-top-left {
+  clip-path: polygon(0 0, 95% 15%, 100% 100%, 0 100%);
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(46, 125, 50, 0);
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Stagger animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--earth-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--forest-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1b5e20;
+}
+
+/* Selection color */
+::selection {
+  background: var(--sage);
+  color: var(--charcoal);
+}
+
+::-moz-selection {
+  background: var(--sage);
+  color: var(--charcoal);
 }
