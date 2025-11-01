@@ -25,7 +25,7 @@ export default function Logo({ variant = 'dark', size = 'md', rotate = false }: 
       }}
     >
       <Image
-        src="/silh.png"
+        src="/silh3.png"
         alt="Silh Engineering"
         fill
         className="object-contain"

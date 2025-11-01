@@ -171,10 +171,16 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Center - Theme Toggle Button */}
+        {/* Center - Logo and LBYA Label */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
+          <Logo variant="dark" size="sm" />
+          <span className="text-xl font-semibold tracking-wider text-[#2E7D32]">LBYA</span>
+        </div>
+
+        {/* Right - Theme Toggle Button */}
         <button
           onClick={toggleTheme}
-          className="absolute left-1/2 -translate-x-1/2 p-2 rounded-full hover:bg-[#2E7D32]/10 transition-all group"
+          className="p-2 rounded-full hover:bg-[#2E7D32]/10 transition-all group"
           aria-label="Toggle theme"
           title={theme === 'default' ? 'Switch to monochrome' : 'Switch to color'}
         >
