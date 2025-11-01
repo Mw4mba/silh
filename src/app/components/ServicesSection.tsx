@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from '../i18n/I18nContext';
@@ -17,22 +18,22 @@ export default function ServicesSection() {
     {
       id: 1,
       ...t.services.items.sustainable,
-      image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/services/sustainable.jpg',
     },
     {
       id: 2,
       ...t.services.items.structural,
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/services/structural.jpg',
     },
     {
       id: 3,
       ...t.services.items.bim,
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/services/bim.jpg',
     },
     {
       id: 4,
       ...t.services.items.climate,
-      image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/services/climate.jpg',
     },
   ];
 
@@ -90,10 +91,11 @@ export default function ServicesSection() {
               className="group relative overflow-hidden bg-[#F5F5DC] rounded-sm hover:shadow-2xl transition-all duration-500"
             >
               <div className="relative h-80 overflow-hidden">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#2E7D32]/20 to-[#2E7D32]/90" />
                 <h3 className="absolute bottom-6 left-6 text-3xl font-light text-white">

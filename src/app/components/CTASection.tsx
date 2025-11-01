@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from '../i18n/I18nContext';
@@ -39,10 +40,11 @@ export default function CTASection() {
     >
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2074&auto=format&fit=crop"
+        <Image
+          src="/images/cta/careers-bg.jpg"
           alt="Team collaboration"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-b from-[#37474F]/80 via-[#2E7D32]/70 to-[#37474F]/80" />
       </div>

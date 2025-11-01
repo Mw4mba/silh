@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from '../i18n/I18nContext';
@@ -17,17 +18,17 @@ export default function ProjectsSection() {
     {
       id: 1,
       ...t.projects.items.copenhagen,
-      image: 'https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2069&auto=format&fit=crop',
+      image: '/images/projects/copenhagen.jpg',
     },
     {
       id: 2,
       ...t.projects.items.stockholm,
-      image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?q=80&w=2073&auto=format&fit=crop',
+      image: '/images/projects/stockholm.jpg',
     },
     {
       id: 3,
       ...t.projects.items.greenValley,
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/projects/green-valley.jpg',
     },
   ];
 
@@ -87,10 +88,11 @@ export default function ProjectsSection() {
               }`}
             >
               <div className={`relative h-96 overflow-hidden rounded-sm ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#2E7D32]/60" />
                 <div className="absolute bottom-6 left-6 right-6">

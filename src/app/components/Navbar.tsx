@@ -95,27 +95,19 @@ export default function Navbar() {
           <span className="block h-0.5 w-6 bg-white transition-all group-hover:w-4"></span>
         </button>
 
-        {/* Theme Toggle Button - Top Center */}
-        <button
-          onClick={toggleTheme}
-          className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-all group mt-6"
-          aria-label="Toggle theme"
-          title={theme === 'default' ? 'Switch to monochrome' : 'Switch to color'}
-        >
-          {theme === 'default' ? (
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-            </svg>
-          ) : (
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-            </svg>
-          )}
-        </button>
-
-        {/* Logo at Bottom */}
-        <div className="mb-2">
+        {/* Logo in Middle */}
+        <div className="flex items-center justify-center">
           <Logo variant="light" size="sm" rotate={true} />
+        </div>
+
+        {/* LBYA Label at Bottom */}
+        <div className="flex items-center justify-center mb-2">
+          <span 
+            className="text-white font-bold tracking-[0.15em] font-[family-name:var(--font-montserrat-alternates)]"
+            style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+          >
+            LBYA
+          </span>
         </div>
       </nav>
 
@@ -172,9 +164,11 @@ export default function Navbar() {
         </div>
 
         {/* Center - Logo and LBYA Label */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
           <Logo variant="dark" size="sm" />
-          <span className="text-xl font-semibold tracking-wider text-[#2E7D32]">LBYA</span>
+          <span className="text-[32px] font-bold tracking-[0.15em] text-[#2E7D32] leading-none font-[family-name:var(--font-montserrat-alternates)]">
+            LBYA
+          </span>
         </div>
 
         {/* Right - Theme Toggle Button */}

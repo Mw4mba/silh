@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslation } from '../i18n/I18nContext';
@@ -17,17 +18,17 @@ export default function InsightsSection() {
     {
       id: 1,
       ...t.insights.items.climate,
-      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/insights/climate-resilience.jpg',
     },
     {
       id: 2,
       ...t.insights.items.materials,
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/insights/carbon-materials.jpg',
     },
     {
       id: 3,
       ...t.insights.items.digitalTwin,
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+      image: '/images/insights/digital-twin.jpg',
     },
   ];
 
@@ -85,10 +86,11 @@ export default function InsightsSection() {
               className="group bg-white hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm"
             >
               <div className="relative h-64 overflow-hidden">
-                <img
+                <Image
                   src={insight.image}
                   alt={insight.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="px-4 py-2 bg-[#2E7D32] text-white text-xs font-semibold uppercase tracking-wider">
