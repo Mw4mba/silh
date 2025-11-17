@@ -112,19 +112,12 @@ export default function Navbar() {
           <span className="block h-0.5 w-6 bg-white transition-all group-hover:w-4"></span>
         </button>
 
-        {/* Logo in Middle */}
-        <div className="flex items-center justify-center">
-          <Logo variant="light" size="sm" rotate={true} />
-        </div>
+        {/* Empty middle space */}
+        <div className="flex-1"></div>
 
-        {/* LBYA Label at Bottom */}
+        {/* Logo at Bottom */}
         <div className="flex items-center justify-center mb-2">
-          <span 
-            className="text-white font-bold tracking-[0.15em]"
-            style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: "'Ruslan Display', serif" }}
-          >
-            LBYA
-          </span>
+          <Logo variant="light" size="sm" rotate={true} />
         </div>
       </nav>
 
