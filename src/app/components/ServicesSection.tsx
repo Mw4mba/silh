@@ -120,7 +120,7 @@ export default function ServicesSection() {
                 </div>
 
                 <a
-                  href="#"
+                  href="#about"
                   className="inline-flex items-center gap-2 text-[#2E7D32] font-medium group-hover:gap-4 transition-all"
                 >
                   <span>{t.services.learnMore}</span>

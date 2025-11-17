@@ -150,8 +150,8 @@ export const translations: Record<Language, Translations> = {
       contact: 'Contact',
     },
     hero: {
-      title: 'Together, we engineer',
-      titleBold: 'a liveable future',
+      title: 'Rooted in Nature,',
+      titleBold: 'Built for the Future',
       subtitle: 'Combining future-focused thinking and technical excellence to create sustainable infrastructure that shapes communities for generations.',
       ctaWhatWeDo: 'What we do',
       ctaProjects: 'Our projects',

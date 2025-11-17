@@ -50,7 +50,7 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6">{t.footer.company.title}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#about" className="text-[#A5D6A7] hover:text-white transition-colors">
+                <a href="/about" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.company.about}
                 </a>
               </li>
@@ -60,7 +60,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors">
+                <a href="/careers" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.company.careers}
                 </a>
               </li>
@@ -98,15 +98,6 @@ export default function Footer() {
             <div className="flex gap-6">
               <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors">
                 LinkedIn
-              </a>
-              <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors">
-                Twitter
-              </a>
-              <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors">
-                Facebook
-              </a>
-              <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors">
-                Instagram
               </a>
             </div>
           </div>

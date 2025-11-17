@@ -109,7 +109,7 @@ export default function InsightsSection() {
                 </p>
 
                 <a
-                  href="#"
+                  href={`/insights/${insight.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                   className="inline-flex items-center gap-2 text-[#2E7D32] font-semibold text-sm group-hover:gap-4 transition-all"
                 >
                   <span>{t.insights.readArticle}</span>

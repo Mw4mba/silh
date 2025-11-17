@@ -59,7 +59,7 @@ export default function CTASection() {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="#"
+            href="/careers"
             className="group px-10 py-5 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
             <span>{t.cta.searchApply}</span>
@@ -68,7 +68,7 @@ export default function CTASection() {
             </svg>
           </a>
           <a
-            href="#"
+            href="/about"
             className="group px-10 py-5 bg-transparent text-white font-medium rounded-sm border-2 border-white hover:bg-white hover:text-[#2E7D32] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
             <span>{t.cta.lifeAt}</span>
@@ -78,21 +78,6 @@ export default function CTASection() {
           </a>
         </div>
 
-        {/* Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-16 border-t border-white/30">
-          <div>
-            <p className="text-5xl font-light text-white mb-2">12,000+</p>
-            <p className="text-white/80 font-light">{t.cta.stats.employees}</p>
-          </div>
-          <div>
-            <p className="text-5xl font-light text-white mb-2">45+</p>
-            <p className="text-white/80 font-light">{t.cta.stats.countries}</p>
-          </div>
-          <div>
-            <p className="text-5xl font-light text-white mb-2">1,200+</p>
-            <p className="text-white/80 font-light">{t.cta.stats.projects}</p>
-          </div>
-        </div>
       </div>
     </section>
   );

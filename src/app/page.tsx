@@ -5,6 +5,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
+import ITServicesSection from './components/ITServicesSection';
 import InsightsSection from './components/InsightsSection';
 import ProjectsSection from './components/ProjectsSection';
 import CTASection from './components/CTASection';
@@ -18,6 +19,7 @@ export default function Home() {
           <Navbar />
           <HeroSection />
           <ServicesSection />
+          <ITServicesSection />
           <InsightsSection />
           <ProjectsSection />
           <CTASection />

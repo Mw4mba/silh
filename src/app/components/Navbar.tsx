@@ -11,6 +11,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuItemsRef = useRef<HTMLDivElement>(null);
 
@@ -18,29 +19,45 @@ export default function Navbar() {
   const menuItems = [
     { label: t.navbar.services, href: '#services' },
     { label: t.navbar.projects, href: '#projects' },
-    { label: t.navbar.about, href: '#about' },
-    { label: t.navbar.contact, href: '#contact' },
+    { label: t.navbar.about, href: '/about' },
+    { label: t.navbar.contact, href: '/contact' },
   ];
 
   useEffect(() => {
     if (isMenuOpen && menuItemsRef.current) {
-      gsap.to(menuItemsRef.current, {
-        opacity: 1,
-        duration: 0.4,
-        ease: 'power2.out',
-      });
-
+      gsap.set(menuItemsRef.current, { opacity: 1 });
+      
       const items = menuItemsRef.current.querySelectorAll('a');
-      gsap.from(items, {
-        opacity: 0,
-        x: 30,
-        duration: 0.3,
-        stagger: 0.08,
-        ease: 'power2.out',
-        delay: 0.1,
-      });
+      gsap.fromTo(items, 
+        {
+          opacity: 0,
+          x: 30,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: 'power2.out',
+          delay: 0.1,
+        }
+      );
     }
   }, [isMenuOpen]);
+
+  // Scroll effect for logo
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -55,7 +72,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-[#2E7D32]/95 backdrop-blur-sm z-40 lg:hidden"
+          className="fixed inset-0 bg-[#2E7D32]/95 backdrop-blur-sm z-[60] lg:hidden"
           onClick={() => setIsMenuOpen(false)}
         >
           <div className="flex flex-col h-full justify-center items-center px-8">
@@ -66,7 +83,7 @@ export default function Navbar() {
               ×
             </button>
             
-            <nav ref={menuItemsRef} className="flex flex-col gap-8 text-center mb-12" style={{ opacity: 0 }}>
+            <nav ref={menuItemsRef} className="flex flex-col gap-8 text-center">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
@@ -78,32 +95,6 @@ export default function Navbar() {
                 </a>
               ))}
             </nav>
-
-            {/* Theme Toggle in Mobile Menu */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleTheme();
-              }}
-              className="mt-8 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-sm transition-all flex items-center gap-3"
-              aria-label="Toggle theme"
-            >
-              {theme === 'default' ? (
-                <>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                  </svg>
-                  <span>Switch to Monochrome</span>
-                </>
-              ) : (
-                <>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                  </svg>
-                  <span>Switch to Color</span>
-                </>
-              )}
-            </button>
           </div>
         </div>
       )}
@@ -130,7 +121,7 @@ export default function Navbar() {
         <div className="flex items-center justify-center mb-2">
           <span 
             className="text-white font-bold tracking-[0.15em]"
-            style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: "'Days One', sans-serif" }}
+            style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: "'Ruslan Display', serif" }}
           >
             LBYA
           </span>
@@ -167,7 +158,7 @@ export default function Navbar() {
       )}
 
       {/* Top Bar - Language Selector (COWI minimalist style) */}
-      <div className="fixed top-0 left-0 right-0 lg:right-20 h-16 bg-white/90 backdrop-blur-md z-50 flex items-center justify-between px-6 border-b border-[#2E7D32]/10">
+      <div className="fixed top-0 left-0 right-0 lg:right-20 h-16 bg-white/90 backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-[#2E7D32]/10">
         {/* Language Selection (Left) */}
         <div className="flex items-center gap-3">
           {languages.map((lang, index) => (
@@ -190,9 +181,14 @@ export default function Navbar() {
         </div>
 
         {/* Center - Logo and LBYA Label - Hidden on Mobile */}
-        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2">
-          <Logo variant="dark" size="sm" />
-          <span className="text-[32px] font-bold tracking-[0.15em] text-[#2E7D32] leading-none" style={{ fontFamily: "'Days One', sans-serif" }}>
+        <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 transition-all duration-300 ${isScrolled ? 'gap-1.5' : 'gap-3'}`}>
+          <div className={`transition-all duration-300 ${isScrolled ? 'scale-75' : 'scale-110'}`}>
+            <Logo variant="dark" size="sm" />
+          </div>
+          <span 
+            className={`font-bold tracking-[0.15em] text-[#2E7D32] leading-none transition-all duration-300 ${isScrolled ? 'text-[24px]' : 'text-[36px]'}`} 
+            style={{ fontFamily: "'Ruslan Display', serif" }}
+          >
             LBYA
           </span>
         </div>

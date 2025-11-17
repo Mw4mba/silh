@@ -125,7 +125,7 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 hidden">
           <a
             href="#"
             className="inline-flex items-center gap-3 px-10 py-5 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-xl hover:shadow-2xl"
