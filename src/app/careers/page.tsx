@@ -2,10 +2,13 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function CareersPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
       <div className="max-w-7xl mx-auto px-6 py-24">
         <Link 
           href="/" 
@@ -110,6 +113,7 @@ export default function CareersPage() {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

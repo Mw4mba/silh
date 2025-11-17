@@ -3,25 +3,40 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { I18nProvider } from '../../i18n/I18nContext';
-import { ThemeProvider } from '../../context/ThemeContext';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { useTranslation } from '../../i18n/I18nContext';
 
 export default function ArticlePage() {
   const params = useParams();
   const slug = params.slug as string;
+  const { t, language } = useTranslation();
 
-  // Placeholder article data - will be populated with real content later
-  const articleTitle = slug.split('-').map(word => 
-    word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ');
+  // Map slug to article data
+  const getArticleData = () => {
+    if (slug.includes('climate-resilience')) {
+      return t.insights.items.climate;
+    } else if (slug.includes('carbon-negative')) {
+      return t.insights.items.materials;
+    } else if (slug.includes('digital-twin')) {
+      return t.insights.items.digitalTwin;
+    }
+    // Default fallback
+    return {
+      title: slug.split('-').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+      ).join(' '),
+      category: 'Article',
+      excerpt: '',
+      date: ''
+    };
+  };
+
+  const article = getArticleData();
 
   return (
-    <ThemeProvider>
-      <I18nProvider>
-        <div className="min-h-screen bg-white">
-          <Navbar />
+    <div className="min-h-screen bg-white">
+      <Navbar />
           
           <main className="w-full">
             <div className="max-w-4xl mx-auto px-6 py-24">
@@ -32,50 +47,61 @@ export default function ArticlePage() {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-                Back to Insights
+                {language === 'EN' ? 'Back to Insights' : language === 'FR' ? 'Retour aux Insights' : 'Tillbaka till Insikter'}
               </Link>
 
         <div className="mb-8">
           <span className="px-4 py-2 bg-[#2E7D32] text-white text-xs font-semibold uppercase tracking-wider">
-            Category
+            {article.category}
           </span>
-          <p className="text-sm text-[#37474F]/60 mt-6 font-medium">Publication Date</p>
+          <p className="text-sm text-[#37474F]/60 mt-6 font-medium">{article.date}</p>
         </div>
 
         <h1 className="text-4xl md:text-5xl font-light text-[#2E7D32] mb-8 leading-tight">
-          {articleTitle}
+          {article.title}
         </h1>
 
         <div className="prose prose-lg max-w-none">
           <p className="text-lg text-[#37474F]/80 leading-relaxed mb-6">
-            This is a placeholder article page. Content will be added later.
+            {article.excerpt}
           </p>
           
           <p className="text-[#37474F]/80 leading-relaxed mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            {language === 'EN' 
+              ? 'This is a detailed exploration of the topic. Full article content will be developed to provide in-depth analysis, case studies, and actionable insights.'
+              : language === 'FR'
+              ? 'Ceci est une exploration détaillée du sujet. Le contenu complet de l\'article sera développé pour fournir une analyse approfondie, des études de cas et des informations exploitables.'
+              : 'Detta är en detaljerad utforskning av ämnet. Fullständigt artikelinnehåll kommer att utvecklas för att ge djupgående analys, fallstudier och handlingsbara insikter.'}
           </p>
 
           <h2 className="text-2xl font-light text-[#2E7D32] mt-12 mb-4">
-            Section Heading
+            {language === 'EN' ? 'Key Insights' : language === 'FR' ? 'Informations Clés' : 'Viktiga Insikter'}
           </h2>
 
           <p className="text-[#37474F]/80 leading-relaxed mb-4">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.
+            {language === 'EN'
+              ? 'Our research and experience in this field have revealed important patterns and opportunities. We continue to explore innovative solutions that push the boundaries of sustainable engineering.'
+              : language === 'FR'
+              ? 'Nos recherches et notre expérience dans ce domaine ont révélé des tendances et des opportunités importantes. Nous continuons d\'explorer des solutions innovantes qui repoussent les limites de l\'ingénierie durable.'
+              : 'Vår forskning och erfarenhet inom detta område har avslöjat viktiga mönster och möjligheter. Vi fortsätter att utforska innovativa lösningar som driver gränserna för hållbar teknik.'}
           </p>
 
           <div className="bg-[#F5F5DC] p-8 rounded-sm my-8">
             <p className="text-[#2E7D32] font-medium italic">
-              "This is a placeholder quote or callout. Real content will be added when the article is complete."
+              "{language === 'EN' 
+                ? 'Innovation in sustainable engineering requires both technical excellence and environmental responsibility.'
+                : language === 'FR'
+                ? 'L\'innovation en ingénierie durable nécessite à la fois l\'excellence technique et la responsabilité environnementale.'
+                : 'Innovation inom hållbar teknik kräver både teknisk excellens och miljöansvar.'}"
             </p>
           </div>
 
           <p className="text-[#37474F]/80 leading-relaxed mb-4">
-            Additional article content will be developed and added here. This page structure 
-            is ready to receive full article content including images, diagrams, and detailed analysis.
+            {language === 'EN'
+              ? 'Additional article content will be developed and added here. This page structure is ready to receive full article content including images, diagrams, and detailed analysis.'
+              : language === 'FR'
+              ? 'Du contenu d\'article supplémentaire sera développé et ajouté ici. Cette structure de page est prête à recevoir le contenu complet de l\'article, y compris des images, des diagrammes et une analyse détaillée.'
+              : 'Ytterligare artikelinnehåll kommer att utvecklas och läggas till här. Denna sidstruktur är redo att ta emot fullständigt artikelinnehåll inklusive bilder, diagram och detaljerad analys.'}
           </p>
         </div>
 
@@ -87,15 +113,13 @@ export default function ArticlePage() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
-                  Back to All Insights
+                  {t.insights.readAll}
                 </Link>
               </div>
             </div>
           </main>
           
-          <Footer />
-        </div>
-      </I18nProvider>
-    </ThemeProvider>
+      <Footer />
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Language, translations, Translations } from './translations';
 
 export type { Language };
@@ -15,12 +15,33 @@ const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>('EN');
+  const [mounted, setMounted] = useState(false);
+
+  // Load language from localStorage on mount
+  useEffect(() => {
+    setMounted(true);
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage && ['EN', 'FR', 'SV'].includes(savedLanguage)) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  // Save language to localStorage when it changes
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
 
   const value: I18nContextType = {
     language,
-    setLanguage,
+    setLanguage: handleSetLanguage,
     t: translations[language],
   };
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+  }
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }

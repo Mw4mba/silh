@@ -3,8 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { I18nProvider } from '../i18n/I18nContext';
-import { ThemeProvider } from '../context/ThemeContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useTranslation } from '../i18n/I18nContext';
@@ -154,11 +152,5 @@ function InsightsPageContent() {
 }
 
 export default function InsightsPage() {
-  return (
-    <ThemeProvider>
-      <I18nProvider>
-        <InsightsPageContent />
-      </I18nProvider>
-    </ThemeProvider>
-  );
+  return <InsightsPageContent />;
 }
