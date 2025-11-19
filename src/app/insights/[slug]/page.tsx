@@ -105,7 +105,30 @@ export default function ArticlePage() {
           </p>
         </div>
 
-              <div className="mt-16 pt-8 border-t border-[#2E7D32]/20">
+        {/* Related Articles Section */}
+        <div className="mt-24 pt-12 border-t border-[#2E7D32]/20">
+           <h3 className="text-2xl font-light text-[#2E7D32] mb-8">Read Next</h3>
+           <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Link href="/insights/designing-for-climate-resilience-in-urban-environments" className="group block">
+                 <div className="h-48 bg-[#F5F5DC] rounded-sm mb-4 relative overflow-hidden">
+                    {/* Placeholder Image */}
+                    <div className="absolute inset-0 bg-[#2E7D32]/10 group-hover:bg-[#2E7D32]/20 transition-colors"></div>
+                 </div>
+                 <h4 className="text-lg font-medium text-[#2E7D32] group-hover:text-[#1b5e20] transition-colors">Designing for Climate Resilience</h4>
+                 <p className="text-sm text-[#37474F]/60 mt-2">Explore how urban planning is adapting to changing climate patterns.</p>
+              </Link>
+              <Link href="/insights/the-future-of-structural-engineering-carbon-negative-materials" className="group block">
+                 <div className="h-48 bg-[#F5F5DC] rounded-sm mb-4 relative overflow-hidden">
+                    {/* Placeholder Image */}
+                    <div className="absolute inset-0 bg-[#2E7D32]/10 group-hover:bg-[#2E7D32]/20 transition-colors"></div>
+                 </div>
+                 <h4 className="text-lg font-medium text-[#2E7D32] group-hover:text-[#1b5e20] transition-colors">Carbon Negative Materials</h4>
+                 <p className="text-sm text-[#37474F]/60 mt-2">Innovations in materials science that are changing construction.</p>
+              </Link>
+           </div>
+        </div>
+
+              <div className="mt-8">
                 <Link 
                   href="/insights" 
                   className="inline-flex items-center gap-3 px-8 py-4 bg-[#2E7D32] text-white font-medium rounded-sm hover:bg-[#1b5e20] transition-all shadow-lg hover:shadow-xl"

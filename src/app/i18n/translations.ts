@@ -5,6 +5,8 @@ export interface Translations {
     services: string;
     projects: string;
     about: string;
+    insights: string;
+    careers: string;
     contact: string;
   };
   hero: {
@@ -147,6 +149,8 @@ export const translations: Record<Language, Translations> = {
       services: 'Services',
       projects: 'Projects',
       about: 'About',
+      insights: 'Insights',
+      careers: 'Careers',
       contact: 'Contact',
     },
     hero: {
@@ -287,6 +291,8 @@ export const translations: Record<Language, Translations> = {
       services: 'Services',
       projects: 'Projets',
       about: 'À propos',
+      insights: 'Insights',
+      careers: 'Carrières',
       contact: 'Contact',
     },
     hero: {
@@ -427,6 +433,8 @@ export const translations: Record<Language, Translations> = {
       services: 'Tjänster',
       projects: 'Projekt',
       about: 'Om oss',
+      insights: 'Insikter',
+      careers: 'Karriärer',
       contact: 'Kontakt',
     },
     hero: {

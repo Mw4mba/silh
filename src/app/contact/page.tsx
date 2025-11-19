@@ -7,31 +7,29 @@ import Footer from '../components/Footer';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#2E7D32]">
       <Navbar />
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-2 text-[#2E7D32] hover:text-[#1b5e20] mb-8 font-medium"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Home
-        </Link>
-
-        <div className="mb-12">
-          <h1 className="text-5xl md:text-6xl font-light text-[#2E7D32] mb-6 leading-tight">
-            Get in <span className="font-semibold">Touch</span>
-          </h1>
-          <p className="text-xl text-[#37474F]/80 leading-relaxed">
-            Let's discuss how we can bring your sustainable engineering vision to life.
-          </p>
+      
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 px-6 bg-[#2E7D32]">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+          <div>
+            <h1 className="text-7xl md:text-9xl font-bold text-white tracking-tighter leading-none">
+              Get in Touch
+            </h1>
+          </div>
+          <div className="flex justify-start md:justify-end">
+            <p className="text-xl md:text-2xl text-white font-medium leading-snug max-w-md">
+              Let's discuss how we can bring your sustainable engineering vision to life.
+            </p>
+          </div>
         </div>
+      </section>
 
+      <div className="max-w-7xl mx-auto px-6 pb-24">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-[#F5F5DC] p-8 rounded-sm">
+          <div className="bg-white p-8 rounded-sm">
             <h2 className="text-2xl font-light text-[#2E7D32] mb-6">Send us a message</h2>
             <form className="space-y-6">
               <div>
@@ -90,46 +88,46 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-light text-[#2E7D32] mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-light text-white mb-6">Contact Information</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#A5D6A7] rounded-sm flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-[#37474F]">Email</p>
-                    <a href="mailto:info@lbya.com" className="text-[#2E7D32] hover:text-[#1b5e20]">
+                    <p className="font-medium text-white/60">Email</p>
+                    <a href="mailto:info@lbya.com" className="text-white hover:text-white/80 text-lg">
                       info@lbya.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#A5D6A7] rounded-sm flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-[#37474F]">Phone</p>
-                    <a href="tel:+1234567890" className="text-[#2E7D32] hover:text-[#1b5e20]">
+                    <p className="font-medium text-white/60">Phone</p>
+                    <a href="tel:+1234567890" className="text-white hover:text-white/80 text-lg">
                       +1 (234) 567-890
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#A5D6A7] rounded-sm flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-[#37474F]">Address</p>
-                    <p className="text-[#37474F]/80">
+                    <p className="font-medium text-white/60">Address</p>
+                    <p className="text-white text-lg">
                       123 Engineering Street<br />
                       Tech City, TC 12345<br />
                       Country
@@ -146,6 +144,16 @@ export default function ContactPage() {
                 <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
                 <p><strong>Sunday:</strong> Closed</p>
               </div>
+            </div>
+            
+            {/* Map Placeholder */}
+            <div className="h-64 bg-[#E8F5E9] rounded-sm flex items-center justify-center border border-[#2E7D32]/20">
+               <div className="text-center">
+                  <svg className="w-12 h-12 text-[#2E7D32]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                  <span className="text-[#2E7D32]/60 font-medium">Map View</span>
+               </div>
             </div>
           </div>
         </div>

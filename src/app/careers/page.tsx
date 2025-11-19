@@ -10,16 +10,6 @@ export default function CareersPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <div className="max-w-7xl mx-auto px-6 py-24">
-        <Link 
-          href="/" 
-          className="inline-flex items-center gap-2 text-[#2E7D32] hover:text-[#1b5e20] mb-8 font-medium"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Home
-        </Link>
-
         <div className="mb-12">
           <h1 className="text-5xl md:text-6xl font-light text-[#2E7D32] mb-6 leading-tight">
             Careers at <span className="font-semibold">LBYA</span>
@@ -92,12 +82,17 @@ export default function CareersPage() {
                   </span>
                 </div>
                 <p className="text-[#37474F]/60 mb-4">{job.location}</p>
-                <button className="inline-flex items-center gap-2 text-[#2E7D32] font-medium hover:gap-3 transition-all">
-                  View Details
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
+                <div className="flex gap-4">
+                  <button className="inline-flex items-center gap-2 text-[#2E7D32] font-medium hover:gap-3 transition-all">
+                    View Details
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-[#2E7D32] text-white text-sm font-medium rounded-sm hover:bg-[#1b5e20] transition-all">
+                    Apply Now
+                  </button>
+                </div>
               </div>
             ))}
           </div>

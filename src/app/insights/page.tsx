@@ -1,14 +1,79 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useTranslation } from '../i18n/I18nContext';
 
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 function InsightsPageContent() {
   const { t } = useTranslation();
+  const heroRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const newsletterRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Newsletter Animation
+      if (newsletterRef.current) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: newsletterRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+
+        tl.fromTo(newsletterRef.current,
+          { 
+            y: 100,       // Start lower for better "float up" effect
+            opacity: 0, 
+            scale: 0.95   // Start slightly smaller
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,     // Land at natural size
+            duration: 1.2, // Slower duration for "floating" feel
+            ease: 'power3.out'
+          }
+        )
+        .to(newsletterRef.current, {
+          scale: 1.03,    // Expand slightly
+          duration: 0.8,  // Gentle expansion
+          ease: 'power2.out'
+        });
+      }
+
+      // LBYA Animation
+      if (wrapperRef.current && textRef.current) {
+        gsap.fromTo(textRef.current,
+          { y: '100%' },
+          {
+            y: '0%',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: wrapperRef.current,
+              start: 'top top',
+              end: '+=100%',
+              scrub: true,
+              pin: true,
+            }
+          }
+        );
+      }
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const insights = [
     {
@@ -37,61 +102,76 @@ function InsightsPageContent() {
       
       <main className="w-full">
         {/* Hero Section */}
-        <section className="relative py-32 bg-[#2E7D32] text-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h1 className="text-5xl md:text-6xl font-light mb-6">
-              Insights & <span className="font-semibold">Innovation</span>
-            </h1>
-            <p className="text-xl font-light leading-relaxed">
-              {t.insights.subtitle}
-            </p>
+        <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 px-6 bg-[#2E7D32]">
+          <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+            <div>
+              <h1 className="text-7xl md:text-9xl font-bold text-white tracking-tighter leading-none">
+                Insights
+              </h1>
+            </div>
+            <div className="flex justify-start md:justify-end">
+              <p className="text-xl md:text-2xl text-white font-medium leading-snug max-w-md">
+                Exploring the intersection of sustainable architecture, innovative design, and modern living.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Featured Articles Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl font-light text-[#2E7D32] mb-12 text-center">Featured Articles</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {insights.map((insight) => (
-                <Link
-                  key={insight.id}
-                  href={`/insights/${insight.slug}`}
-                  className="group bg-white hover:shadow-xl transition-all duration-500 overflow-hidden rounded-sm border border-[#2E7D32]/10"
-                >
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={insight.image}
-                      alt={insight.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-4 py-2 bg-[#2E7D32] text-white text-xs font-semibold uppercase tracking-wider">
-                        {insight.category}
+        {/* Latest Articles Section */}
+        <section className="py-24 bg-[#2E7D32]">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="bg-white p-8 md:p-12">
+              <div className="flex items-center justify-between mb-12 border-b border-[#2E7D32]/10 pb-4">
+                 <h2 className="text-3xl font-light text-[#2E7D32]">Latest Articles</h2>
+                 <div className="hidden md:flex gap-4 text-sm font-medium text-[#37474F]/60">
+                    <span className="text-[#2E7D32] cursor-pointer">All</span>
+                    <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Sustainability</span>
+                    <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Innovation</span>
+                    <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Projects</span>
+                 </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                {insights.map((insight) => (
+                  <Link
+                    key={insight.id}
+                    href={`/insights/${insight.slug}`}
+                    className="group block"
+                  >
+                    <div className="relative h-64 overflow-hidden rounded-sm mb-6">
+                      <Image
+                        src={insight.image}
+                        alt={insight.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                         <span className="px-2 py-1 bg-[#F5F5DC] text-[#2E7D32] text-[10px] font-bold uppercase tracking-wider rounded-sm">
+                          {insight.category}
+                         </span>
+                         <span className="text-xs text-[#37474F]/40 font-medium">{insight.date}</span>
+                      </div>
+                      
+                      <h3 className="text-xl font-medium text-[#2E7D32] mb-3 group-hover:text-[#1b5e20] transition-colors leading-snug">
+                        {insight.title}
+                      </h3>
+                      <p className="text-[#37474F]/60 text-sm leading-relaxed mb-4 line-clamp-3">
+                        {insight.excerpt}
+                      </p>
+
+                      <span className="inline-flex items-center gap-2 text-[#2E7D32] font-semibold text-xs uppercase tracking-wider group-hover:gap-3 transition-all">
+                        <span>Read Story</span>
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
                       </span>
                     </div>
-                  </div>
-
-                  <div className="p-8">
-                    <p className="text-sm text-[#37474F]/60 mb-3 font-medium">{insight.date}</p>
-                    <h3 className="text-2xl font-light text-[#2E7D32] mb-4 group-hover:text-[#1b5e20] transition-colors">
-                      {insight.title}
-                    </h3>
-                    <p className="text-[#37474F]/80 leading-relaxed mb-6 font-light">
-                      {insight.excerpt}
-                    </p>
-
-                    <span className="inline-flex items-center gap-2 text-[#2E7D32] font-semibold text-sm group-hover:gap-4 transition-all">
-                      <span>{t.insights.readArticle}</span>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -126,24 +206,46 @@ function InsightsPageContent() {
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-24 bg-[#2E7D32] text-white">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-light mb-6">Stay Updated</h2>
-            <p className="text-xl font-light mb-8">
-              Subscribe to receive our latest insights and innovations
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-sm text-[#37474F] focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="px-8 py-4 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-lg">
-                Subscribe
-              </button>
+        <section className="py-24 bg-[#F5F5DC]">
+          <div ref={newsletterRef} className="max-w-4xl mx-auto px-6">
+            <div className="bg-[#2E7D32] text-white rounded-2xl p-12 md:p-16 text-center shadow-2xl transform will-change-transform">
+              <h2 className="text-3xl md:text-4xl font-light mb-6">Stay Updated</h2>
+              <p className="text-lg md:text-xl font-light mb-8 text-white/90">
+                Subscribe to receive our latest insights and innovations
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-6 py-4 rounded-sm text-[#37474F] focus:outline-none focus:ring-2 focus:ring-white/50 bg-white/95 backdrop-blur-sm"
+                />
+                <button className="px-8 py-4 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-lg whitespace-nowrap">
+                  Subscribe
+                </button>
+              </div>
             </div>
           </div>
         </section>
+        {/* LBYA Animation Section */}
+        <div ref={heroRef}>
+          <section ref={wrapperRef} className="relative h-screen w-full bg-[#F5F5DC] overflow-hidden flex flex-col justify-between py-32 px-6">
+            <div className="max-w-7xl mx-auto w-full">
+              <h2 className="text-2xl md:text-3xl font-medium text-[#2E7D32] tracking-wide uppercase">
+                Our Philosophy
+              </h2>
+            </div>
+            
+            <div className="w-full overflow-hidden">
+              <h2 
+                ref={textRef}
+                className="text-[25vw] leading-[0.8] font-bold text-[#2E7D32] tracking-tighter text-center"
+                style={{ fontFamily: "'Ruslan Display', serif" }}
+              >
+                LBYA
+              </h2>
+            </div>
+          </section>
+        </div>
       </main>
 
       <Footer />
