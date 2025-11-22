@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold text-lg mb-6 uppercase" style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</h4>
+            <h4 className="font-bold text-2xl mb-6 uppercase" style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</h4>
             <ul className="space-y-3">
               <li>
                 <a href="/about" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">

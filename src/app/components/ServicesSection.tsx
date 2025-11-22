@@ -19,16 +19,19 @@ export default function ServicesSection() {
       id: 1,
       ...t.services.items.sustainable,
       image: '/images/services/sustainable.jpg',
+      link: '/solutions#sustainable',
     },
     {
       id: 2,
       ...t.services.items.structural,
       image: '/images/services/structural.jpg',
+      link: '/solutions#structural',
     },
     {
       id: 3,
       ...t.services.items.bim,
       image: '/images/services/bim.jpg',
+      link: '/solutions#bim',
     },
     {
       id: 4,
@@ -36,6 +39,7 @@ export default function ServicesSection() {
       description: 'Comprehensive IT solutions to support your engineering projects, from infrastructure to software development.',
       insights: ['Cloud Solutions', 'Cybersecurity', 'Custom Development'],
       image: '/images/services/bim.jpg',
+      link: '/solutions#it',
     },
   ];
 
@@ -122,7 +126,7 @@ export default function ServicesSection() {
                 </div>
 
                 <a
-                  href="#about"
+                  href={service.link}
                   className="inline-flex items-center gap-2 text-[#2E7D32] font-medium group-hover:gap-4 transition-all"
                 >
                   <span>{t.services.learnMore}</span>

@@ -144,7 +144,7 @@ export default function Navbar() {
       {/* Desktop Side Navbar - COWI Style */}
       <nav 
         ref={sidebarRef}
-        className="hidden lg:flex fixed right-0 top-0 h-screen w-20 bg-[#37474F] z-40 flex-col items-center justify-between py-8 border-l border-white"
+        className="hidden lg:flex fixed right-0 top-0 h-screen w-14 bg-[#37474F] z-40 flex-col items-center justify-between py-8 border-l border-white"
       >
         {/* Hamburger at Top */}
         <button
@@ -152,9 +152,9 @@ export default function Navbar() {
           className="flex flex-col items-center justify-center w-12 h-12 group"
           aria-label="Toggle menu"
         >
-          <span className="block h-0.5 w-6 bg-white mb-1.5 transition-all group-hover:w-7"></span>
-          <span className="block h-0.5 w-6 bg-white mb-1.5 transition-all"></span>
-          <span className="block h-0.5 w-6 bg-white transition-all group-hover:w-4"></span>
+          <span className="block h-0.5 w-7 bg-white mb-1.5 transition-all group-hover:w-8"></span>
+          <span className="block h-0.5 w-7 bg-white mb-1.5 transition-all"></span>
+          <span className="block h-0.5 w-7 bg-white transition-all group-hover:w-5"></span>
         </button>
 
         {/* Empty middle space */}
@@ -171,7 +171,7 @@ export default function Navbar() {
       {/* Desktop Slide-out Menu - COWI Style */}
       <div 
         ref={desktopMenuRef}
-        className="hidden lg:block fixed right-20 top-0 h-screen w-80 bg-[#37474F] shadow-2xl z-30 border-l border-white"
+        className="hidden lg:block fixed right-14 top-0 h-screen w-80 bg-[#37474F] shadow-2xl z-30 border-l border-white"
         style={{ transform: 'translateX(100%)' }}
       >
         <div className="flex flex-col h-full justify-center px-12">
@@ -196,30 +196,34 @@ export default function Navbar() {
       </div>
 
       {/* Top Bar - Language Selector (COWI minimalist style) */}
-      <div className="fixed top-0 left-0 right-0 lg:right-20 h-20 bg-[#2E7D32]/90 backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-white/10">
+      <div className="fixed top-0 left-0 right-0 lg:right-14 h-20 bg-[#2E7D32] backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-white/10">
         {/* Language Selection (Left) */}
         <div className="relative">
           <button 
             onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-            className="flex items-center gap-2 text-white/70 hover:text-[#A5D6A7] transition-colors focus:outline-none"
+            className="flex flex-col items-center gap-1 text-white hover:text-[#A5D6A7] transition-colors focus:outline-none"
             aria-label="Select language"
           >
-            <svg 
-              className="w-5 h-5" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-            </svg>
-            <svg 
-              className={`w-3 h-3 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
+            <div className="flex items-center gap-2">
+              <svg 
+                className="w-5 h-5" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <svg 
+                className={`w-3 h-3 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <span className="text-xs  tracking-wide">Global</span>
           </button>
 
           {isLangMenuOpen && (
