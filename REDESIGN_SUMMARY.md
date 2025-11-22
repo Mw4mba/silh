@@ -31,7 +31,7 @@
   - Sustainable Architecture
   - Structural Engineering
   - BIM-Based Workflow
-  - IT services (NEW)
+  - IT solutions (NEW)
 - **Card design**:
   - Hero image (320px height)
   - Gradient overlay
@@ -104,7 +104,7 @@ All images from Unsplash:
 - Green buildings (sustainable architecture)
 - Construction/engineering (structural)
 - Digital/tech (BIM workflow)
-- Nature/climate (IT services)
+- Nature/climate (IT solutions)
 - Cityscapes (projects)
 - Team collaboration (careers)
 

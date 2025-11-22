@@ -55,7 +55,7 @@ export default function ITServicesSection() {
                 Service {item}
               </h3>
               <p className="text-[#37474F]/70 leading-relaxed mb-4 font-light">
-                Content to be added. This section will showcase our IT services and technology solutions.
+                Content to be added. This section will showcase our IT solutions and technology solutions.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-[#A5D6A7]/30 text-[#2E7D32] text-sm rounded-full font-medium">

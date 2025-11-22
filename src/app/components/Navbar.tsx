@@ -144,7 +144,7 @@ export default function Navbar() {
       {/* Desktop Side Navbar - COWI Style */}
       <nav 
         ref={sidebarRef}
-        className="hidden lg:flex fixed right-0 top-0 h-screen w-20 bg-[#2E7D32] z-40 flex-col items-center justify-between py-8 border-l border-white"
+        className="hidden lg:flex fixed right-0 top-0 h-screen w-20 bg-[#37474F] z-40 flex-col items-center justify-between py-8 border-l border-white"
       >
         {/* Hamburger at Top */}
         <button
@@ -171,7 +171,7 @@ export default function Navbar() {
       {/* Desktop Slide-out Menu - COWI Style */}
       <div 
         ref={desktopMenuRef}
-        className="hidden lg:block fixed right-20 top-0 h-screen w-80 bg-[#2E7D32] shadow-2xl z-30 border-l border-white"
+        className="hidden lg:block fixed right-20 top-0 h-screen w-80 bg-[#37474F] shadow-2xl z-30 border-l border-white"
         style={{ transform: 'translateX(100%)' }}
       >
         <div className="flex flex-col h-full justify-center px-12">
@@ -196,7 +196,7 @@ export default function Navbar() {
       </div>
 
       {/* Top Bar - Language Selector (COWI minimalist style) */}
-      <div className="fixed top-0 left-0 right-0 lg:right-20 h-16 bg-[#37474F]/90 backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-white/10">
+      <div className="fixed top-0 left-0 right-0 lg:right-20 h-20 bg-[#2E7D32]/90 backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-white/10">
         {/* Language Selection (Left) */}
         <div className="relative">
           <button 
@@ -251,17 +251,17 @@ export default function Navbar() {
         </div>
 
         {/* Center - Logo and LBYA Label - Hidden on Mobile */}
-        <TransitionLink href="/" className={`hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 transition-all duration-300 ${isScrolled ? 'gap-1.5' : 'gap-3'}`}>
-          <div className={`transition-all duration-300 ${isScrolled ? 'scale-75' : 'scale-110'}`}>
+        <TransitionLink href="/" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-4">
+          <div>
             <img
               src="/logoA.svg"
               alt="LBYA AB"
-              className="w-12 h-12 object-contain"
+              className="w-14 h-14 object-contain"
               style={{ filter: 'invert(1) brightness(2)' }}
             />
           </div>
           <span 
-            className={`font-bold tracking-[0.15em] text-white leading-none transition-all duration-300 ${isScrolled ? 'text-[24px]' : 'text-[36px]'}`} 
+            className="font-bold tracking-[0.15em] text-white leading-none text-[42px]" 
             style={{ fontFamily: "'Ruslan Display', serif" }}
           >
             LBYA
@@ -293,7 +293,7 @@ export default function Navbar() {
       </div>
 
       {/* Spacer for fixed navbar */}
-      <div className="h-16" />
+      <div className="h-20" />
     </>
   );
 }

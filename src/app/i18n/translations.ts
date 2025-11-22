@@ -182,7 +182,7 @@ export const translations: Record<Language, Translations> = {
           insights: ['Digital Twins', 'Clash Detection', 'Lifecycle Mgmt'],
         },
         climate: {
-          title: 'IT services',
+          title: 'IT solutions',
           description: 'We help clients prepare for a changing climate through infrastructure resilience, flood mitigation, heat island reduction, and nature-based solutions that protect communities.',
           insights: ['Flood Resilience', 'Heat Mitigation', 'Green Infrastructure'],
         },
@@ -247,7 +247,7 @@ export const translations: Record<Language, Translations> = {
       titleBold: 'grow',
       subtitle: 'What if you could build a career that\'s as unique as you? With us you can.',
       searchApply: 'Search and apply',
-      lifeAt: 'Life at Silh',
+      lifeAt: 'Life at LBYA',
       stats: {
         employees: 'Employees worldwide',
         countries: 'Countries',
@@ -269,7 +269,7 @@ export const translations: Record<Language, Translations> = {
         sustainable: 'Sustainable Architecture',
         structural: 'Structural Engineering',
         bim: 'BIM Workflow',
-        climate: 'IT services',
+        climate: 'IT solutions',
       },
       resources: {
         title: 'Resources',

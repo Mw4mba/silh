@@ -17,7 +17,7 @@ export default function AboutPage() {
             <span className="font-semibold">Built for the Future.</span>
           </h1>
           <p className="text-2xl text-[#37474F]/80 leading-relaxed font-light">
-            We are LBYA. We are redefining the relationship between the built environment and the natural world.
+            We are <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>. We are redefining the relationship between the built environment and the natural world.
           </p>
         </div>
 
@@ -84,10 +84,10 @@ export default function AboutPage() {
         {/* Quote Section */}
         <div className="bg-[#F5F5DC] p-12 md:p-24 rounded-sm mb-32 text-center">
           <blockquote className="text-2xl md:text-3xl font-light text-[#2E7D32] leading-relaxed mb-8">
-            "We observed how the construction industry was drifting away from nature. Even the simplest projects ignored their environmental context. The fact that today’s infrastructure was not resilient enough for tomorrow's climate ignited our desire to create LBYA."
+            "We observed how the construction industry was drifting away from nature. Even the simplest projects ignored their environmental context. The fact that today's infrastructure was not resilient enough for tomorrow's climate ignited our desire to create <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>."
           </blockquote>
           <cite className="text-[#37474F] font-medium not-italic block">
-            — Sarah Chen, CEO of LBYA
+            — Sarah Chen, CEO of <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>
           </cite>
         </div>
 

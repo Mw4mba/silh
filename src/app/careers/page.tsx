@@ -111,7 +111,7 @@ export default function CareersPage() {
         <div className="bg-[#2E7D32] text-white p-12 rounded-sm">
           <h2 className="text-3xl font-light mb-4">Don't see the right position?</h2>
           <p className="text-white/90 mb-6 text-lg">
-            We're always looking for talented individuals. Send us your CV and tell us why you'd like to join LBYA.
+            We're always looking for talented individuals. Send us your CV and tell us why you'd like to join <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>.
           </p>
           <button className="px-8 py-4 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-lg hover:shadow-xl">
             Submit Your Application

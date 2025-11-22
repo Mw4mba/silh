@@ -32,7 +32,7 @@ export default function ServicesSection() {
     },
     {
       id: 4,
-      title: 'IT Services',
+      title: 'IT solutions',
       description: 'Comprehensive IT solutions to support your engineering projects, from infrastructure to software development.',
       insights: ['Cloud Solutions', 'Cybersecurity', 'Custom Development'],
       image: '/images/services/bim.jpg',
