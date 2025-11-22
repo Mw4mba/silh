@@ -57,7 +57,7 @@ export default function HeroSection() {
           ref={titleRef}
           className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-8 leading-tight tracking-tight"
         >
-          {t.hero.title}
+          <span className="font-semibold">{t.hero.title}</span>
           <br />
           <span className="font-semibold">{t.hero.titleBold}</span>
         </h1>

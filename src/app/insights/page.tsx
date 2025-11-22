@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import TransitionLink from '../components/TransitionLink';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -133,7 +134,7 @@ function InsightsPageContent() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                 {insights.map((insight) => (
-                  <Link
+                  <TransitionLink
                     key={insight.id}
                     href={`/insights/${insight.slug}`}
                     className="group block"
@@ -169,7 +170,7 @@ function InsightsPageContent() {
                         </svg>
                       </span>
                     </div>
-                  </Link>
+                  </TransitionLink>
                 ))}
               </div>
             </div>

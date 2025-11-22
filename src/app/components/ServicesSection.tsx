@@ -32,8 +32,10 @@ export default function ServicesSection() {
     },
     {
       id: 4,
-      ...t.services.items.climate,
-      image: '/images/services/climate.jpg',
+      title: 'IT Services',
+      description: 'Comprehensive IT solutions to support your engineering projects, from infrastructure to software development.',
+      insights: ['Cloud Solutions', 'Cybersecurity', 'Custom Development'],
+      image: '/images/services/bim.jpg',
     },
   ];
 
@@ -98,7 +100,7 @@ export default function ServicesSection() {
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-b from-transparent via-[#2E7D32]/20 to-[#2E7D32]/90" />
-                <h3 className="absolute bottom-6 left-6 text-3xl font-light text-white">
+                <h3 className="absolute bottom-6 left-6 text-3xl font-medium text-white">
                   {service.title}
                 </h3>
               </div>

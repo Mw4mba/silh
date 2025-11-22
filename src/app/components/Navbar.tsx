@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import TransitionLink from './TransitionLink';
 import gsap from 'gsap';
 import Logo from './Logo';
 import { useTranslation, type Language } from '../i18n/I18nContext';
@@ -19,8 +20,11 @@ export default function Navbar() {
   const sidebarRef = useRef<HTMLDivElement>(null);
   const desktopMenuRef = useRef<HTMLDivElement>(null);
 
-  const languages: Language[] = ['EN', 'FR', 'SV'];
-  const moreLanguages = ['DE', 'ES', 'IT', 'PT', 'NL'];
+  const languageOptions = [
+    { code: 'EN' as Language, name: 'English (Global)' },
+    { code: 'FR' as Language, name: 'Français' },
+    { code: 'SV' as Language, name: 'Svenska' },
+  ];
   const menuItems = [
     { label: t.navbar.services, href: '/#services' },
     { label: t.navbar.projects, href: '/#projects' },
@@ -123,14 +127,14 @@ export default function Navbar() {
             
             <nav className="flex flex-col gap-8 text-center">
               {menuItems.map((item) => (
-                <a
+                <TransitionLink
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   className="text-4xl font-light text-white hover:text-[#A5D6A7] transition-colors tracking-tight"
                 >
                   {item.label}
-                </a>
+                </TransitionLink>
               ))}
             </nav>
           </div>
@@ -158,9 +162,9 @@ export default function Navbar() {
 
         {/* Logo at Bottom */}
         <div className="flex items-center justify-center mb-2">
-          <Link href="/">
-            <Logo variant="light" size="sm" rotate={true} />
-          </Link>
+          <TransitionLink href="/">
+            <Logo variant="sidebar" size="sm" rotate={true} />
+          </TransitionLink>
         </div>
       </nav>
 
@@ -173,7 +177,7 @@ export default function Navbar() {
         <div className="flex flex-col h-full justify-center px-12">
           <nav ref={menuItemsRef} className="flex flex-col gap-6">
             {menuItems.map((item, index) => (
-              <a
+              <TransitionLink
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
@@ -185,97 +189,84 @@ export default function Navbar() {
                     {item.label}
                   </span>
                 </div>
-              </a>
+              </TransitionLink>
             ))}
           </nav>
         </div>
       </div>
 
       {/* Top Bar - Language Selector (COWI minimalist style) */}
-      <div className="fixed top-0 left-0 right-0 lg:right-20 h-16 bg-white/90 backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-[#2E7D32]/10">
+      <div className="fixed top-0 left-0 right-0 lg:right-20 h-16 bg-[#37474F]/90 backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-white/10">
         {/* Language Selection (Left) */}
-        <div className="flex items-center gap-3">
-          {languages.map((lang, index) => (
-            <React.Fragment key={lang}>
-              <button
-                onClick={() => handleLanguageClick(lang)}
-                className={`text-sm font-medium tracking-wider transition-colors ${
-                  lang === language
-                    ? 'text-[#2E7D32]'
-                    : 'text-[#37474F]/50 hover:text-[#37474F]'
-                }`}
-              >
-                {lang}
-              </button>
-              {index < languages.length - 1 && (
-                <span className="text-[#37474F]/30 text-sm">/</span>
-              )}
-            </React.Fragment>
-          ))}
-          
-          {/* More Languages Dropdown */}
-          <div className="relative ml-1">
-            <button 
-              onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="flex items-center justify-center w-4 h-4 text-[#37474F]/50 hover:text-[#2E7D32] transition-colors focus:outline-none"
-              aria-label="More languages"
+        <div className="relative">
+          <button 
+            onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+            className="flex items-center gap-2 text-white/70 hover:text-[#A5D6A7] transition-colors focus:outline-none"
+            aria-label="Select language"
+          >
+            <svg 
+              className="w-5 h-5" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
             >
-              <svg 
-                className={`w-3 h-3 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+            <svg 
+              className={`w-3 h-3 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
 
-            {isLangMenuOpen && (
-              <div className="absolute top-full left-0 mt-2 py-2 w-16 bg-white shadow-lg rounded-sm border border-[#2E7D32]/10 flex flex-col gap-1 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                {moreLanguages.map((lang) => (
+          {isLangMenuOpen && (
+            <>
+              <div 
+                className="fixed inset-0 z-40" 
+                onClick={() => setIsLangMenuOpen(false)}
+              />
+              <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-white shadow-lg rounded-sm border border-[#2E7D32]/10 flex flex-col z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                {languageOptions.map((lang) => (
                   <button
-                    key={lang}
-                    className="text-sm font-medium text-[#37474F]/50 hover:text-[#2E7D32] hover:bg-[#F5F5DC] py-1.5 transition-colors w-full text-center"
-                    onClick={() => setIsLangMenuOpen(false)}
+                    key={lang.code}
+                    className={`text-sm px-4 py-2.5 hover:bg-[#F5F5DC] transition-colors text-left ${
+                      lang.code === language 
+                        ? 'text-[#2E7D32] font-semibold bg-[#F5F5DC]/50' 
+                        : 'text-[#37474F]/70 font-medium'
+                    }`}
+                    onClick={() => {
+                      handleLanguageClick(lang.code);
+                      setIsLangMenuOpen(false);
+                    }}
                   >
-                    {lang}
+                    {lang.name}
                   </button>
                 ))}
               </div>
-            )}
-          </div>
+            </>
+          )}
         </div>
 
         {/* Center - Logo and LBYA Label - Hidden on Mobile */}
-        <Link href="/" className={`hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 transition-all duration-300 ${isScrolled ? 'gap-1.5' : 'gap-3'}`}>
+        <TransitionLink href="/" className={`hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-2 transition-all duration-300 ${isScrolled ? 'gap-1.5' : 'gap-3'}`}>
           <div className={`transition-all duration-300 ${isScrolled ? 'scale-75' : 'scale-110'}`}>
-            <Logo variant="dark" size="sm" />
+            <img
+              src="/logoA.svg"
+              alt="LBYA AB"
+              className="w-12 h-12 object-contain"
+              style={{ filter: 'invert(1) brightness(2)' }}
+            />
           </div>
           <span 
-            className={`font-bold tracking-[0.15em] text-[#2E7D32] leading-none transition-all duration-300 ${isScrolled ? 'text-[24px]' : 'text-[36px]'}`} 
+            className={`font-bold tracking-[0.15em] text-white leading-none transition-all duration-300 ${isScrolled ? 'text-[24px]' : 'text-[36px]'}`} 
             style={{ fontFamily: "'Ruslan Display', serif" }}
           >
             LBYA
           </span>
-        </Link>
-
-        {/* Right - Theme Toggle Button - Hidden on Mobile */}
-        <button
-          onClick={toggleTheme}
-          className="hidden lg:block p-2 rounded-full hover:bg-[#2E7D32]/10 transition-all group"
-          aria-label="Toggle theme"
-          title={theme === 'default' ? 'Switch to monochrome' : 'Switch to color'}
-        >
-          {theme === 'default' ? (
-            <svg className="w-5 h-5 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-            </svg>
-          ) : (
-            <svg className="w-5 h-5 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-            </svg>
-          )}
-        </button>
+        </TransitionLink>
 
         {/* Mobile Hamburger (Right) */}
         <button
@@ -284,17 +275,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`h-0.5 w-6 bg-[#2E7D32] rounded transition-transform origin-center ${
+            className={`h-0.5 w-6 bg-white rounded transition-transform origin-center ${
               isMenuOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           />
           <span
-            className={`h-0.5 w-6 bg-[#2E7D32] rounded transition-opacity ${
+            className={`h-0.5 w-6 bg-white rounded transition-opacity ${
               isMenuOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`h-0.5 w-6 bg-[#2E7D32] rounded transition-transform origin-center ${
+            className={`h-0.5 w-6 bg-white rounded transition-transform origin-center ${
               isMenuOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           />

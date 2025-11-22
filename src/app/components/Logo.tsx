@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 interface LogoProps {
-  variant?: 'light' | 'dark';
+  variant?: 'light' | 'dark' | 'sidebar';
   size?: 'sm' | 'md' | 'lg';
   rotate?: boolean;
 }
@@ -16,6 +16,9 @@ export default function Logo({ variant = 'dark', size = 'md', rotate = false }: 
     lg: { width: 96, height: 96 },
   };
 
+  const logoSrc = variant === 'sidebar' ? '/logoB.svg' : '/logoA.svg';
+  const filterClass = variant === 'sidebar' ? 'invert brightness-0 saturate-100' : '';
+
   return (
     <div 
       className={`relative ${rotate ? 'rotate-90' : ''}`}
@@ -25,10 +28,11 @@ export default function Logo({ variant = 'dark', size = 'md', rotate = false }: 
       }}
     >
       <Image
-        src="/silh3.png"
-        alt="Silh Engineering"
+        src={logoSrc}
+        alt="LBYA AB"
         fill
-        className="object-contain"
+        className={`object-contain ${filterClass}`}
+        style={variant === 'sidebar' ? { filter: 'invert(1) brightness(2)' } : undefined}
         priority
       />
     </div>

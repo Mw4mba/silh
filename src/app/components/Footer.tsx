@@ -9,13 +9,57 @@ export default function Footer() {
   return (
     <footer className="relative w-full bg-[#37474F] text-white py-16 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <Logo variant="light" size="md" />
-            <p className="mt-4 text-[#A5D6A7] leading-relaxed font-light">
-              {t.footer.tagline}
+            <div className="relative w-32 h-32 mb-4">
+              <img
+                src="/logoA.svg"
+                alt="LBYA AB"
+                className="w-full h-full object-contain"
+                style={{ filter: 'invert(1) brightness(2)' }}
+              />
+            </div>
+            <p className="text-white text-3xl font-['Ruslan_Display'] mb-4 text-center" style={{ width: '128px' }}>
+              LBYA AB
             </p>
+          </div>
+
+          {/* Pages */}
+          <div>
+            <h4 className="font-bold text-lg mb-6">Pages</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="/" className="text-[#A5D6A7] hover:text-white transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="text-[#A5D6A7] hover:text-white transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/insights" className="text-[#A5D6A7] hover:text-white transition-colors">
+                  Insights
+                </a>
+              </li>
+              <li>
+                <a href="/careers" className="text-[#A5D6A7] hover:text-white transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="text-[#A5D6A7] hover:text-white transition-colors">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="text-[#A5D6A7] hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Quick Links */}
@@ -96,7 +140,10 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-[#A5D6A7]">{t.footer.copyright}</p>
             <div className="flex gap-6">
-              <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors">
+              <a href="/privacy" className="text-[#A5D6A7] hover:text-white transition-colors">
+                Privacy Policy
+              </a>
+              <a href="https://www.linkedin.com/company/lbya/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] hover:text-white transition-colors">
                 LinkedIn
               </a>
             </div>

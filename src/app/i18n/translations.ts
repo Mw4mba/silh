@@ -161,7 +161,7 @@ export const translations: Record<Language, Translations> = {
       ctaProjects: 'Our projects',
     },
     services: {
-      title: 'Shaping the',
+      title: 'Shaping the future',
       titleBold: 'future',
       subtitle: 'We combine future-focused thinking and technical know-how to power local impact.',
       learnMore: 'Learn more',
@@ -182,7 +182,7 @@ export const translations: Record<Language, Translations> = {
           insights: ['Digital Twins', 'Clash Detection', 'Lifecycle Mgmt'],
         },
         climate: {
-          title: 'Climate Adaptation',
+          title: 'IT services',
           description: 'We help clients prepare for a changing climate through infrastructure resilience, flood mitigation, heat island reduction, and nature-based solutions that protect communities.',
           insights: ['Flood Resilience', 'Heat Mitigation', 'Green Infrastructure'],
         },
@@ -223,22 +223,22 @@ export const translations: Record<Language, Translations> = {
       viewAll: 'View all projects',
       items: {
         copenhagen: {
-          title: 'Copenhagen Waterfront District',
-          location: 'Denmark',
-          category: 'Mixed-Use Development',
-          description: 'A climate-adaptive waterfront district integrating green roofs, tidal parks, and carbon-neutral buildings that set new standards for urban resilience.',
+          title: 'Kinshasa Urban Development',
+          location: 'Democratic Republic of Congo',
+          category: 'Urban Infrastructure',
+          description: 'Transforming urban infrastructure with sustainable design principles, integrating modern transit systems and green spaces for a rapidly growing metropolis.',
         },
         stockholm: {
-          title: 'Stockholm Central Station Expansion',
+          title: 'Stockholm Transit Hub',
           location: 'Sweden',
           category: 'Transport Infrastructure',
-          description: 'Modernizing a heritage structure with seismic retrofitting and energy-efficient systems while preserving its architectural character.',
+          description: 'Advancing urban mobility through integrated transport solutions, combining heritage preservation with modern efficiency and sustainable energy systems.',
         },
         greenValley: {
-          title: 'Green Valley Business Park',
-          location: 'France',
-          category: 'Commercial',
-          description: 'A net-zero office campus featuring biomimetic facades, rainwater harvesting, and integrated biodiversity corridors.',
+          title: 'Cape Town Coastal District',
+          location: 'South Africa',
+          category: 'Mixed-Use Development',
+          description: 'Creating resilient coastal communities through sustainable design, integrating residential and commercial spaces with climate-adaptive infrastructure and renewable energy.',
         },
       },
     },
@@ -256,7 +256,7 @@ export const translations: Record<Language, Translations> = {
     },
     footer: {
       tagline: 'Together, we engineer a liveable future',
-      copyright: '2025 Silh Engineering. All rights reserved.',
+      copyright: '2025 LBYA AB. All rights reserved.',
       company: {
         title: 'Company',
         about: 'About Us',
@@ -269,7 +269,7 @@ export const translations: Record<Language, Translations> = {
         sustainable: 'Sustainable Architecture',
         structural: 'Structural Engineering',
         bim: 'BIM Workflow',
-        climate: 'Climate Adaptation',
+        climate: 'IT services',
       },
       resources: {
         title: 'Resources',
@@ -398,7 +398,7 @@ export const translations: Record<Language, Translations> = {
     },
     footer: {
       tagline: 'Ensemble, nous concevons un avenir viable',
-      copyright: '2025 Silh Engineering. Tous droits réservés.',
+      copyright: '2025 LBYA AB. Tous droits réservés.',
       company: {
         title: 'Entreprise',
         about: 'À Propos',
@@ -540,7 +540,7 @@ export const translations: Record<Language, Translations> = {
     },
     footer: {
       tagline: 'Tillsammans skapar vi en hållbar framtid',
-      copyright: '2025 Silh Engineering. Alla rättigheter förbehållna.',
+      copyright: '2025 LBYA AB. Alla rättigheter förbehållna.',
       company: {
         title: 'Företag',
         about: 'Om Oss',

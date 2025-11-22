@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { TransitionProvider } from "./context/TransitionContext";
+import CookieConsent from "./components/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,7 +32,10 @@ export default function RootLayout({
         className={`${inter.variable} antialiased bg-[#F5F5DC]`}
       >
         <Providers>
-          {children}
+          <TransitionProvider>
+            {children}
+          </TransitionProvider>
+          <CookieConsent />
         </Providers>
       </body>
     </html>

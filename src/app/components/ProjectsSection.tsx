@@ -18,17 +18,17 @@ export default function ProjectsSection() {
     {
       id: 1,
       ...t.projects.items.copenhagen,
-      image: '/images/projects/copenhagen.jpg',
+      image: 'https://images.unsplash.com/photo-1611348524140-53c9a25263d6?q=80&w=2070&auto=format&fit=crop',
     },
     {
       id: 2,
       ...t.projects.items.stockholm,
-      image: '/images/projects/stockholm.jpg',
+      image: 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=2070&auto=format&fit=crop',
     },
     {
       id: 3,
       ...t.projects.items.greenValley,
-      image: '/images/projects/green-valley.jpg',
+      image: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=2071&auto=format&fit=crop',
     },
   ];
 
@@ -110,16 +110,6 @@ export default function ProjectsSection() {
                 <p className="text-white/80 leading-relaxed mb-6 text-lg font-light">
                   {project.description}
                 </p>
-
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-white font-medium border-b-2 border-white/40 hover:border-white pb-1 group-hover:gap-4 transition-all"
-                >
-                  <span>{t.projects.viewProject}</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
               </div>
             </div>
           ))}
