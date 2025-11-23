@@ -26,12 +26,12 @@ export default function Navbar() {
     { code: 'SV' as Language, name: 'Svenska' },
   ];
   const menuItems = [
-    { label: t.navbar.services, href: '/#services' },
-    { label: t.navbar.projects, href: '/#projects' },
+    { label: 'Solutions', href: '/solutions' },
     { label: t.navbar.about, href: '/about' },
     { label: t.navbar.insights, href: '/insights' },
     { label: t.navbar.careers, href: '/careers' },
     { label: t.navbar.contact, href: '/contact' },
+    { label: 'Privacy', href: '/privacy' },
   ];
 
   useEffect(() => {
