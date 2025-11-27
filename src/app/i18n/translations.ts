@@ -213,9 +213,9 @@ export const translations: Record<Language, Translations> = {
           insights: ['Advanced analysis', 'Concrete & Steel design', 'Design Audit'],
         },
         bim: {
-          title: 'BIM-Based Workflow',
-          description: 'Leveraging Building Information Modeling, we streamline collaboration across disciplines, reduce errors, and optimize project outcomes from concept through construction and beyond.',
-          insights: ['Digital Twins', 'Clash Detection', 'Lifecycle Mgmt'],
+          title: 'BIM & VDC Services',
+          description: 'Digital transformation for the built environment. We leverage cutting-edge BIM and VDC technologies to streamline collaboration, enhance project delivery, and drive sustainable outcomes from concept through operations.',
+          insights: ['Model Coordination', '4D/5D Planning', 'Automation & Integration'],
         },
         climate: {
           title: 'IT solutions',
@@ -264,20 +264,20 @@ export const translations: Record<Language, Translations> = {
         ],
       },
       bim: {
-        title: 'BIM-Based Workflow',
-        description: 'Leveraging Building Information Modeling, we streamline collaboration across disciplines, reduce errors, and optimize project outcomes from concept through construction and beyond.',
+        title: 'BIM & VDC Services',
+        description: 'Digital transformation for the built environment. We leverage cutting-edge BIM and VDC technologies to streamline collaboration, enhance project delivery, and drive sustainable outcomes from concept through operations.',
         insights: [
           {
-            title: 'Digital Twins',
-            description: 'We create virtual replicas of physical assets that bridge design, construction, and operations. Our digital twins enable real-time monitoring, predictive maintenance, and scenario planning throughout the entire building lifecycle.',
+            title: 'Model Coordination',
+            description: 'Our VDC experts ensure seamless integration across all disciplines through rigorous model coordination and clash detection. We implement ISO 19650-compliant information management, CDE setup and governance, and comprehensive QA/QC health audits to maintain model integrity throughout the project lifecycle.',
           },
           {
-            title: 'Clash Detection',
-            description: 'Through coordinated 3D modeling, we identify and resolve conflicts between building systems before construction begins. This proactive approach eliminates costly on-site changes and ensures seamless integration of architectural, structural, and MEP components.',
+            title: '4D/5D Planning',
+            description: 'We connect BIM models to time and cost for powerful project insights. Our 4D scheduling visualizes construction sequences to optimize logistics and reduce delays, while 5D cost linking and model-based quantity takeoffs provide accurate, real-time budget tracking that supports informed decision-making.',
           },
           {
-            title: 'Lifecycle Mgmt',
-            description: 'Our BIM models extend beyond construction to support facility management and future renovations. We embed critical asset data, maintenance schedules, and performance metrics that inform decision-making throughout the building\'s operational life.',
+            title: 'Automation & Integration',
+            description: 'We develop custom automation scripts and API integrations that eliminate repetitive tasks and connect your project data across platforms. From reality capture and scan-to-BIM workflows to Power BI dashboards for project controls, we build digital ecosystems that enhance productivity and transparency.',
           },
         ],
       },
@@ -431,9 +431,9 @@ export const translations: Record<Language, Translations> = {
           insights: ['Analyse avancée', 'Conception Béton et Acier', 'Audit de conception'],
         },
         bim: {
-          title: 'Flux de Travail BIM',
-          description: 'En exploitant la modélisation des informations du bâtiment, nous rationalisons la collaboration entre les disciplines, réduisons les erreurs et optimisons les résultats des projets de la conception à la construction et au-delà.',
-          insights: ['Jumeaux Numériques', 'Détection de Conflits', 'Gestion du Cycle de Vie'],
+          title: 'Services BIM & VDC',
+          description: 'Transformation numérique pour l\'environnement bâti. Nous exploitons les technologies BIM et VDC de pointe pour rationaliser la collaboration, améliorer la livraison des projets et favoriser des résultats durables du concept aux opérations.',
+          insights: ['Coordination de Modèles', 'Planification 4D/5D', 'Automatisation & Intégration'],
         },
         climate: {
           title: 'Solutions IT',
@@ -482,20 +482,20 @@ export const translations: Record<Language, Translations> = {
         ],
       },
       bim: {
-        title: 'Flux de Travail BIM',
-        description: 'En exploitant la modélisation des informations du bâtiment, nous rationalisons la collaboration entre les disciplines, réduisons les erreurs et optimisons les résultats des projets de la conception à la construction et au-delà.',
+        title: 'Services BIM & VDC',
+        description: 'Transformation numérique pour l\'environnement bâti. Nous exploitons les technologies BIM et VDC de pointe pour rationaliser la collaboration, améliorer la livraison des projets et favoriser des résultats durables du concept aux opérations.',
         insights: [
           {
-            title: 'Jumeaux Numériques',
-            description: 'Nous créons des répliques virtuelles d\'actifs physiques qui relient la conception, la construction et les opérations. Nos jumeaux numériques permettent une surveillance en temps réel, une maintenance prédictive et une planification de scénarios tout au long du cycle de vie du bâtiment.',
+            title: 'Coordination de Modèles',
+            description: 'Nos experts VDC assurent une intégration transparente entre toutes les disciplines grâce à une coordination de modèles rigoureuse et une détection des conflits. Nous mettons en œuvre une gestion de l\'information conforme à l\'ISO 19650, la configuration et la gouvernance du CDE, et des audits QA/QC complets pour maintenir l\'intégrité du modèle tout au long du cycle de vie du projet.',
           },
           {
-            title: 'Détection de Conflits',
-            description: 'Grâce à une modélisation 3D coordonnée, nous identifions et résolvons les conflits entre les systèmes du bâtiment avant le début de la construction. Cette approche proactive élimine les changements coûteux sur site et garantit une intégration transparente des composants architecturaux, structurels et MEP.',
+            title: 'Planification 4D/5D',
+            description: 'Nous connectons les modèles BIM au temps et aux coûts pour des informations de projet puissantes. Notre planification 4D visualise les séquences de construction pour optimiser la logistique et réduire les retards, tandis que la liaison des coûts 5D et les métrés basés sur les modèles fournissent un suivi budgétaire précis en temps réel qui soutient une prise de décision éclairée.',
           },
           {
-            title: 'Gestion du Cycle de Vie',
-            description: 'Nos modèles BIM s\'étendent au-delà de la construction pour soutenir la gestion des installations et les rénovations futures. Nous intégrons des données d\'actifs critiques, des calendriers de maintenance et des indicateurs de performance qui informent la prise de décision tout au long de la vie opérationnelle du bâtiment.',
+            title: 'Automatisation & Intégration',
+            description: 'Nous développons des scripts d\'automatisation personnalisés et des intégrations API qui éliminent les tâches répétitives et connectent vos données de projet à travers les plateformes. De la capture de réalité et des flux de travail scan-to-BIM aux tableaux de bord Power BI pour le contrôle des projets, nous construisons des écosystèmes numériques qui améliorent la productivité et la transparence.',
           },
         ],
       },
@@ -649,9 +649,9 @@ export const translations: Record<Language, Translations> = {
           insights: ['Avancerad analys', 'Betong och Stål design', 'Design Revision'],
         },
         bim: {
-          title: 'BIM-baserat Arbetsflöde',
-          description: 'Genom att utnyttja Building Information Modeling effektiviserar vi samarbete mellan discipliner, minskar fel och optimerar projektresultat från koncept genom konstruktion och därefter.',
-          insights: ['Digitala Tvillingar', 'Konfliktdetektering', 'Livscykelhantering'],
+          title: 'BIM & VDC-tjänster',
+          description: 'Digital transformation för den byggda miljön. Vi utnyttjar ledande BIM- och VDC-teknologier för att effektivisera samarbete, förbättra projektleverans och driva hållbara resultat från koncept till drift.',
+          insights: ['Modellkoordinering', '4D/5D-planering', 'Automatisering & Integration'],
         },
         climate: {
           title: 'IT-lösningar',
@@ -700,20 +700,20 @@ export const translations: Record<Language, Translations> = {
         ],
       },
       bim: {
-        title: 'BIM-baserat Arbetsflöde',
-        description: 'Genom att utnyttja Building Information Modeling effektiviserar vi samarbete mellan discipliner, minskar fel och optimerar projektresultat från koncept genom konstruktion och därefter.',
+        title: 'BIM & VDC-tjänster',
+        description: 'Digital transformation för den byggda miljön. Vi utnyttjar ledande BIM- och VDC-teknologier för att effektivisera samarbete, förbättra projektleverans och driva hållbara resultat från koncept till drift.',
         insights: [
           {
-            title: 'Digitala Tvillingar',
-            description: 'Vi skapar virtuella repliker av fysiska tillgångar som kopplar samman design, konstruktion och drift. Våra digitala tvillingar möjliggör realtidsövervakning, prediktivt underhåll och scenarioplanering genom hela byggnadens livscykel.',
+            title: 'Modellkoordinering',
+            description: 'Våra VDC-experter säkerställer sömlös integration mellan alla discipliner genom noggrann modellkoordinering och konfliktdetektering. Vi implementerar ISO 19650-kompatibel informationshantering, CDE-uppsättning och styrning, samt omfattande QA/QC-hälsorevision för att upprätthålla modellintegritet genom hela projektets livscykel.',
           },
           {
-            title: 'Konfliktdetektering',
-            description: 'Genom koordinerad 3D-modellering identifierar och löser vi konflikter mellan byggnadssystem innan konstruktionen börjar. Detta proaktiva tillvägagångssätt eliminerar kostsamma ändringar på plats och säkerställer sömlös integration av arkitektoniska, strukturella och MEP-komponenter.',
+            title: '4D/5D-planering',
+            description: 'Vi kopplar BIM-modeller till tid och kostnad för kraftfulla projektinsikter. Vår 4D-schemaläggning visualiserar byggsekvenser för att optimera logistik och minska förseningar, medan 5D-kostnadskoppling och modellbaserade mängdberäkningar ger exakt budgetspårning i realtid som stöder välgrundade beslut.',
           },
           {
-            title: 'Livscykelhantering',
-            description: 'Våra BIM-modeller sträcker sig bortom konstruktion för att stödja fastighetsförvaltning och framtida renoveringar. Vi bäddar in kritisk tillgångsdata, underhållsscheman och prestationsmått som informerar beslutsfattande genom hela byggnadens operativa liv.',
+            title: 'Automatisering & Integration',
+            description: 'Vi utvecklar anpassade automatiseringsskript och API-integrationer som eliminerar repetitiva uppgifter och kopplar samman din projektdata över plattformar. Från verklighetsfångst och scan-to-BIM-arbetsflöden till Power BI-dashboards för projektkontroll, bygger vi digitala ekosystem som förbättrar produktivitet och transparens.',
           },
         ],
       },

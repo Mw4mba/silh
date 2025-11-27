@@ -30,7 +30,7 @@ export default function ServicesSection() {
     {
       id: 3,
       ...t.services.items.bim,
-      image: '/images/services/bim.jpg',
+      image: '/images/BIM-Image.png',
       link: '/solutions#bim',
     },
     {
