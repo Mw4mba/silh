@@ -198,74 +198,84 @@ export default function Navbar() {
       {/* Top Bar - Language Selector (COWI minimalist style) */}
       <div className="fixed top-0 left-0 right-0 lg:right-14 h-20 bg-[#2E7D32] backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-white/10">
         {/* Language Selection (Left) */}
-        <div className="relative">
-          <button 
-            onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-            className="flex flex-col items-center gap-1 text-white hover:text-[#A5D6A7] transition-colors focus:outline-none"
-            aria-label="Select language"
-          >
-            <div className="flex items-center gap-2">
-              <svg 
-                className="w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+        <div className="flex items-center gap-1">
+          {/* Main Language Buttons - Hidden on Mobile */}
+          <div className="hidden md:flex items-center">
+            {(['EN', 'FR', 'SV'] as Language[]).map((lang, index) => (
+              <button
+                key={lang}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                  lang === language
+                    ? 'text-white'
+                    : 'text-white/60 hover:text-white'
+                } ${index < 2 ? 'border-r border-white/30' : ''}`}
+                onClick={() => handleLanguageClick(lang)}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+                {lang}
+              </button>
+            ))}
+          </div>
+          
+          {/* Dropdown for additional languages (desktop) / Main dropdown (mobile) */}
+          <div className="relative md:ml-1">
+            <button 
+              onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+              className="flex items-center justify-center gap-1 text-white/80 hover:text-white transition-colors focus:outline-none"
+              aria-label="Select language"
+            >
+              {/* Show current language code on mobile */}
+              <span className="md:hidden text-sm font-medium">{language}</span>
               <svg 
-                className={`w-3 h-3 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} 
+                className={`w-4 h-4 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </div>
-            <span className="text-xs  tracking-wide">Global</span>
-          </button>
+            </button>
 
-          {isLangMenuOpen && (
-            <>
-              <div 
-                className="fixed inset-0 z-40" 
-                onClick={() => setIsLangMenuOpen(false)}
-              />
-              <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-white shadow-lg rounded-sm border border-[#2E7D32]/10 flex flex-col z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                {languageOptions.map((lang) => (
-                  <button
-                    key={lang.code}
-                    className={`text-sm px-4 py-2.5 hover:bg-[#F5F5DC] transition-colors text-left ${
-                      lang.code === language 
-                        ? 'text-[#2E7D32] font-semibold bg-[#F5F5DC]/50' 
-                        : 'text-[#37474F]/70 font-medium'
-                    }`}
-                    onClick={() => {
-                      handleLanguageClick(lang.code);
-                      setIsLangMenuOpen(false);
-                    }}
-                  >
-                    {lang.name}
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
+            {isLangMenuOpen && (
+              <>
+                <div 
+                  className="fixed inset-0 z-40" 
+                  onClick={() => setIsLangMenuOpen(false)}
+                />
+                <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-white shadow-lg rounded-sm border border-[#2E7D32]/10 flex flex-col z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {languageOptions.map((lang) => (
+                    <button
+                      key={lang.code}
+                      className={`text-sm px-4 py-2.5 hover:bg-[#F5F5DC] transition-colors text-left ${
+                        lang.code === language 
+                          ? 'text-[#2E7D32] font-semibold bg-[#F5F5DC]/50' 
+                          : 'text-[#37474F]/70 font-medium'
+                      }`}
+                      onClick={() => {
+                        handleLanguageClick(lang.code);
+                        setIsLangMenuOpen(false);
+                      }}
+                    >
+                      {lang.name}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </div>
 
-        {/* Center - Logo and LBYA Label - Hidden on Mobile */}
-        <TransitionLink href="/" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-4">
+        {/* Center - Logo and LBYA Label */}
+        <TransitionLink href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-4">
           <div>
             <img
               src="/logoA.svg"
               alt="LBYA AB"
-              className="w-14 h-14 object-contain"
+              className="w-10 h-10 md:w-14 md:h-14 object-contain"
               style={{ filter: 'invert(1) brightness(2)' }}
             />
           </div>
           <span 
-            className="font-bold tracking-[0.15em] text-white leading-none text-[42px]" 
+            className="font-bold tracking-[0.15em] text-white leading-none text-2xl md:text-[42px]" 
             style={{ fontFamily: "'Ruslan Display', serif" }}
           >
             LBYA
