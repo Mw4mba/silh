@@ -25,22 +25,27 @@ export interface Translations {
       sustainable: {
         title: string;
         description: string;
-        insights: string[];
+        subtext: string[];
       };
       structural: {
         title: string;
         description: string;
-        insights: string[];
+        subtext: string[];
       };
       bim: {
         title: string;
         description: string;
-        insights: string[];
+        subtext: string[];
       };
-      climate: {
+      it: {
         title: string;
         description: string;
-        insights: string[];
+        subtext: string[];
+      };
+      mining: {
+        title: string;
+        description: string;
+        subtext: string[];
       };
     };
   };
@@ -198,29 +203,54 @@ export const translations: Record<Language, Translations> = {
     },
     services: {
       title: 'Shaping the future',
-      titleBold: 'future',
+      titleBold: '',
       subtitle: 'We combine future-focused thinking and technical know-how to power local impact.',
       learnMore: 'Learn more',
       items: {
         sustainable: {
           title: 'Sustainable Architecture',
           description: 'We design buildings that harmonize with their environment, integrating passive strategies, renewable energy, and biophilic principles to create spaces that nurture well-being while minimizing ecological impact.',
-          insights: ['LEED & BREEAM', 'Net-Zero Design', 'Circular Economy'],
+          subtext: [
+            'LEED & BREEAM certification guidance',
+            'Net-Zero design and energy modeling',
+            'Circular economy principles and materials',
+          ],
         },
         structural: {
           title: 'Structural Engineering',
           description: 'Our engineering teams deliver innovative structural solutions that balance safety, efficiency, and sustainability. From seismic resilience to lightweight materials, we push the boundaries of what is possible.',
-          insights: ['Advanced analysis', 'Concrete & Steel design', 'Design Audit'],
+          subtext: [
+            'Advanced structural analysis and optimization',
+            'Concrete & steel design solutions',
+            'Independent design audits and reviews',
+          ],
         },
         bim: {
           title: 'BIM & VDC Services',
           description: 'Digital transformation for the built environment. We leverage cutting-edge BIM and VDC technologies to streamline collaboration, enhance project delivery, and drive sustainable outcomes from concept through operations.',
-          insights: ['Model Coordination', '4D/5D Planning', 'Automation & Integration'],
+          subtext: [
+            'Model Coordination',
+            '4D/5D Planning',
+            'Automation & Integration',
+          ],
         },
-        climate: {
-          title: 'IT solutions',
-          description: 'We help clients prepare for a changing climate through infrastructure resilience, flood mitigation, heat island reduction, and nature-based solutions that protect communities.',
-          insights: ['Flood Resilience', 'Heat Mitigation', 'Green Infrastructure'],
+        it: {
+          title: 'IT Solutions',
+          description: 'Comprehensive IT solutions to support your engineering projects, from infrastructure to software development.',
+          subtext: [
+            'Cloud infrastructure and deployment',
+            'Cybersecurity assessment and compliance',
+            'Custom software development',
+          ],
+        },
+        mining: {
+          title: 'Mining & Cross-Border Consulting',
+          description: 'Strategic advisory services connecting mining companies, investors, and technology partners across Africa and Europe. We facilitate cross-border collaboration and unlock opportunities in emerging markets.',
+          subtext: [
+            'Strategic partner identification',
+            'Technical advisory & compliance',
+            'Project structuring & investment',
+          ],
         },
       },
     },
@@ -415,30 +445,55 @@ export const translations: Record<Language, Translations> = {
       ctaProjects: 'Nos projets',
     },
     services: {
-      title: 'Façonner',
-      titleBold: 'l\'avenir',
+      title: 'Façonner l\'avenir',
+      titleBold: '',
       subtitle: 'Nous combinons une réflexion tournée vers l\'avenir et un savoir-faire technique pour générer un impact local.',
       learnMore: 'En savoir plus',
       items: {
         sustainable: {
           title: 'Architecture Durable',
-          description: 'Nous concevons des bâtiments qui s\'harmonisent avec leur environnement, intégrant des stratégies passives, des énergies renouvelables et des principes biophiliques pour créer des espaces qui favorisent le bien-être tout en minimisant l\'impact écologique.',
-          insights: ['LEED & BREEAM', 'Conception Net-Zéro', 'Économie Circulaire'],
+          description: 'Nous concevons des bâtiments qui s\'harmonisent avec leur environnement, en intégrant des stratégies passives, des énergies renouvelables et des principes biophiliques pour créer des espaces qui favorisent le bien-être tout en minimisant l\'impact écologique.',
+          subtext: [
+            'Certification LEED & BREEAM',
+            'Conception Net-Zero',
+            'Économie circulaire',
+          ],
         },
         structural: {
           title: 'Ingénierie Structurelle',
-          description: 'Nos équipes d\'ingénierie fournissent des solutions structurelles innovantes qui équilibrent sécurité, efficacité et durabilité. De la résilience sismique aux matériaux légers, nous repoussons les limites du possible.',
-          insights: ['Analyse avancée', 'Conception Béton et Acier', 'Audit de conception'],
+          description: 'Nos équipes d\'ingénieurs fournissent des solutions structurelles innovantes qui équilibrent sécurité, efficacité et durabilité. De la résistance sismique aux matériaux légers, nous repoussons les limites du possible.',
+          subtext: [
+            'Analyse structurelle avancée',
+            'Conception béton & acier',
+            'Audits indépendants',
+          ],
         },
         bim: {
           title: 'Services BIM & VDC',
-          description: 'Transformation numérique pour l\'environnement bâti. Nous exploitons les technologies BIM et VDC de pointe pour rationaliser la collaboration, améliorer la livraison des projets et favoriser des résultats durables du concept aux opérations.',
-          insights: ['Coordination de Modèles', 'Planification 4D/5D', 'Automatisation & Intégration'],
+          description: 'Transformation numérique de l\'environnement bâti. Nous exploitons les technologies BIM et VDC de pointe pour rationaliser la collaboration, améliorer la livraison des projets et favoriser des résultats durables de la conception aux opérations.',
+          subtext: [
+            'Coordination de modèles',
+            'Planification 4D/5D',
+            'Automatisation & Intégration',
+          ],
         },
-        climate: {
+        it: {
           title: 'Solutions IT',
-          description: 'Nous aidons les clients à se préparer à un climat changeant grâce à la résilience des infrastructures, l\'atténuation des inondations, la réduction des îlots de chaleur et des solutions basées sur la nature qui protègent les communautés.',
-          insights: ['Résilience aux Inondations', 'Atténuation de la Chaleur', 'Infrastructure Verte'],
+          description: 'Solutions IT complètes pour soutenir vos projets d\'ingénierie, de l\'infrastructure au développement logiciel.',
+          subtext: [
+            'Infrastructure cloud',
+            'Cybersécurité',
+            'Développement logiciel',
+          ],
+        },
+        mining: {
+          title: 'Conseil Minier & Transfrontalier',
+          description: 'Services de conseil stratégique connectant les sociétés minières, les investisseurs et les partenaires technologiques en Afrique et en Europe. Nous facilitons la collaboration transfrontalière et ouvrons des opportunités sur les marchés émergents.',
+          subtext: [
+            'Identification de partenaires',
+            'Conseil technique & conformité',
+            'Structuration de projets',
+          ],
         },
       },
     },
@@ -633,30 +688,55 @@ export const translations: Record<Language, Translations> = {
       ctaProjects: 'Våra projekt',
     },
     services: {
-      title: 'Forma',
-      titleBold: 'framtiden',
+      title: 'Forma framtiden',
+      titleBold: '',
       subtitle: 'Vi kombinerar framtidsfokuserat tänkande och teknisk kompetens för att skapa lokal påverkan.',
       learnMore: 'Läs mer',
       items: {
         sustainable: {
           title: 'Hållbar Arkitektur',
           description: 'Vi designar byggnader som harmoniserar med sin miljö, integrerar passiva strategier, förnybar energi och biofiliska principer för att skapa utrymmen som främjar välbefinnande samtidigt som ekologisk påverkan minimeras.',
-          insights: ['LEED & BREEAM', 'Netto-Noll Design', 'Cirkulär Ekonomi'],
+          subtext: [
+            'LEED & BREEAM-certifiering',
+            'Netto-noll design',
+            'Cirkulär ekonomi',
+          ],
         },
         structural: {
           title: 'Konstruktionsteknik',
-          description: 'Våra ingenjörsteam levererar innovativa strukturella lösningar som balanserar säkerhet, effektivitet och hållbarhet. Från seismisk motståndskraft till lätta material, vi utmanar gränserna för vad som är möjligt.',
-          insights: ['Avancerad analys', 'Betong och Stål design', 'Design Revision'],
+          description: 'Våra ingenjörsteam levererar innovativa strukturella lösningar som balanserar säkerhet, effektivitet och hållbarhet. Från seismisk motståndskraft till lätta material, vi tänjjer på gränserna för vad som är möjligt.',
+          subtext: [
+            'Avancerad strukturanalys',
+            'Betong- & ståldesign',
+            'Oberoende granskningar',
+          ],
         },
         bim: {
           title: 'BIM & VDC-tjänster',
-          description: 'Digital transformation för den byggda miljön. Vi utnyttjar ledande BIM- och VDC-teknologier för att effektivisera samarbete, förbättra projektleverans och driva hållbara resultat från koncept till drift.',
-          insights: ['Modellkoordinering', '4D/5D-planering', 'Automatisering & Integration'],
+          description: 'Digital transformation för den byggda miljön. Vi utnyttjar banbrytande BIM- och VDC-teknologier för att effektivisera samarbete, förbättra projektleverans och driva hållbara resultat från koncept till drift.',
+          subtext: [
+            'Modellkoordinering',
+            '4D/5D-planering',
+            'Automatisering & Integration',
+          ],
         },
-        climate: {
+        it: {
           title: 'IT-lösningar',
-          description: 'Vi hjälper kunder att förbereda sig för ett förändrat klimat genom infrastrukturresiliens, översvämningsbekämpning, värmeö-reducering och naturbaserade lösningar som skyddar samhällen.',
-          insights: ['Översvämningsresiliens', 'Värmereducering', 'Grön Infrastruktur'],
+          description: 'Omfattande IT-lösningar för att stödja dina ingenjörsprojekt, från infrastruktur till mjukvaruutveckling.',
+          subtext: [
+            'Molninfrastruktur',
+            'Cybersäkerhet',
+            'Mjukvaruutveckling',
+          ],
+        },
+        mining: {
+          title: 'Gruvkonsultation & Gränsöverskridande',
+          description: 'Strategiska rådgivningstjänster som kopplar samman gruvbolag, investerare och teknikpartners i Afrika och Europa. Vi underlättar gränsöverskridande samarbete och låser upp möjligheter på tillväxtmarknader.',
+          subtext: [
+            'Strategisk partneridentifiering',
+            'Teknisk rådgivning & efterlevnad',
+            'Projektstrukturering',
+          ],
         },
       },
     },
