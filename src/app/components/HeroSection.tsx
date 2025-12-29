@@ -45,7 +45,7 @@ export default function HeroSection() {
       {/* Full-screen background image with overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop"
+          src="/new-hero.jpg"
           alt="Modern sustainable architecture"
           className="w-full h-full object-cover"
         />

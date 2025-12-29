@@ -43,7 +43,7 @@ const servicesData = {
         title: 'Structural Engineering',
         heroSubtitle: 'Innovative Solutions for Complex Structures',
         image: '/images/services/structural.jpg',
-        description: 'Our engineering teams deliver innovative structural solutions that balance safety, efficiency, and sustainability. From seismic resilience to lightweight materials, we push the boundaries of what is possible.',
+        description: 'Our core services focus on the design of concrete and steel structures and independent structural design audits. We deliver safe, efficient, and buildable solutions in full compliance with Eurocode, the Swedish National Annex (EKS), and South African structural engineering standards (SANS). Through rigorous analysis and clear documentation, we support developers, consultants, and contractors with reliable designs and professional verification across international projects.',
         sections: [
             {
                 title: 'Advanced Structural Analysis',
@@ -118,25 +118,30 @@ const servicesData = {
         title: 'Mining & Cross-Border Consulting',
         heroSubtitle: 'Strategic Advisory for International Mining Projects',
         image: '/images/insights/carbon-materials.jpg',
-        description: 'We provide strategic market entry services that connect mining companies, investors, and technology partners across Africa and Europe. Our deep understanding of regional markets enables seamless cross-border collaboration.',
+        description: 'We provide specialized consulting services that connect mining companies, investors, and technology partners across Africa and Europe. Our role is to bridge regulatory, technical, and operational gaps, enabling mining projects to move efficiently from opportunity to execution. With deep understanding of African mining environments and European standards, governance, and investors\' expectations, we act as a trusted intermediary for cross-border collaboration.',
         sections: [
             {
-                title: 'Strategic Partner Identification',
-                content: 'Our team identifies and vets potential mining partners, operators, and investors that align with your strategic objectives. We leverage our extensive network across African mining hubs and European financial centers to find the right match for your project.',
+                title: 'Market Entry & Partner Identification',
+                content: 'Identification of strategic mining partners, operators, and investors. Support for European companies entering African mining markets. Facilitation of joint ventures and long-term cooperation.',
             },
             {
-                title: 'Technical Advisory & Compliance',
-                content: 'We guide clients through the complex landscape of mining regulations, permitting, and governance frameworks. Our expertise spans multiple jurisdictions, ensuring compliance while minimizing regulatory risk.',
+                title: 'Technical & Engineering Advisory',
+                content: 'Coordination between mining companies and European engineering consultants. Review and alignment of technical documentation with international standards. Support for infrastructure, facilities, and operational planning.',
+            },
+            {
+                title: 'Regulatory & Compliance Support',
+                content: 'Guidance on mining regulations, permitting, and governance frameworks. Alignment with ESG, sustainability, and international reporting requirements. Cross-border risk assessment and compliance strategy.',
             },
             {
                 title: 'Project & Investment Support',
-                content: 'We support mining projects from initial evaluation through to execution readiness. Our investment support services prepare your project for success with investors and ensure smooth project delivery.',
+                content: 'Preparation of technical and strategic documentation for investors. Support during due diligence and feasibility phases. Advisory for project structuring and execution readiness.',
             },
         ],
         keyPoints: [
-            'Strategic partner identification across Africa and Europe',
-            'Technical advisory and regulatory compliance',
-            'Project structuring and investment support',
+            'Market entry & strategic partner identification',
+            'Technical & engineering advisory',
+            'Regulatory & compliance support',
+            'Project & investment support',
         ],
     },
 };

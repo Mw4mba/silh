@@ -218,7 +218,7 @@ export const translations: Record<Language, Translations> = {
         },
         structural: {
           title: 'Structural Engineering',
-          description: 'Our engineering teams deliver innovative structural solutions that balance safety, efficiency, and sustainability. From seismic resilience to lightweight materials, we push the boundaries of what is possible.',
+          description: 'Our core services focus on the design of concrete and steel structures and independent structural design audits. We deliver safe, efficient, and buildable solutions in full compliance with Eurocode, the Swedish National Annex (EKS), and South African structural engineering standards (SANS). Through rigorous analysis and clear documentation, we support developers, consultants, and contractors with reliable designs and professional verification across international projects.',
           subtext: [
             'Advanced structural analysis and optimization',
             'Concrete & steel design solutions',
@@ -277,7 +277,7 @@ export const translations: Record<Language, Translations> = {
       },
       structural: {
         title: 'Structural Engineering',
-        description: 'Our engineering teams deliver innovative structural solutions that balance safety, efficiency, and sustainability. From seismic resilience to lightweight materials, we push the boundaries of what is possible.',
+        description: 'Our core services focus on the design of concrete and steel structures and independent structural design audits. We deliver safe, efficient, and buildable solutions in full compliance with Eurocode, the Swedish National Annex (EKS), and South African structural engineering standards (SANS). Through rigorous analysis and clear documentation, we support developers, consultants, and contractors with reliable designs and professional verification across international projects.',
         insights: [
           {
             title: 'Advanced analysis',
@@ -374,7 +374,7 @@ export const translations: Record<Language, Translations> = {
           title: 'Stockholm Transit Hub',
           location: 'Sweden',
           category: 'Transport Infrastructure',
-          description: 'Advancing urban mobility through integrated transport solutions, combining heritage preservation with modern efficiency and sustainable energy systems.',
+          description: 'Advancing urban mobility through independent structural design audits, ensuring compliance with Eurocode and Swedish NA while balancing heritage preservation, structural safety, durability, and sustainable performance.',
         },
         greenValley: {
           title: 'Cape Town Coastal District',
