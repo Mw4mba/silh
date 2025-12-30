@@ -305,3 +305,33 @@ button {
   color: #2E7D32;
   /* Match brand green on hover */
 }
+
+/* Button Slide Fill Effect - Green Variant (for light backgrounds) */
+.btn-slide-fill-green {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #2E7D32;
+  background-color: transparent;
+  color: #2E7D32;
+  z-index: 1;
+}
+
+.btn-slide-fill-green::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #2E7D32;
+  transition: height 0.3s ease-out;
+  z-index: -1;
+}
+
+.btn-slide-fill-green:hover::before {
+  height: 100%;
+}
+
+.btn-slide-fill-green:hover {
+  color: white;
+}

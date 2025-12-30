@@ -97,7 +97,7 @@ export default function HeroSection() {
             <div className="h-24 md:h-28 mb-8 flex items-end justify-end">
               <p
                 ref={textRef}
-                className="text-lg md:text-xl lg:text-2xl text-white/95 font-light leading-relaxed drop-shadow-md"
+                className="text-base md:text-lg lg:text-xl text-white/95 font-light leading-relaxed drop-shadow-md"
               >
                 {carouselItems[currentTextIndex]}
               </p>

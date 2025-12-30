@@ -125,10 +125,10 @@ export default function InsightsSection() {
         <div className="text-center mt-12">
           <a
             href="#"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#2E7D32] text-white font-medium rounded-sm hover:bg-[#1b5e20] transition-all shadow-lg hover:shadow-xl"
+            className="btn-slide-fill-green px-8 py-4 font-medium rounded-sm shadow-lg hover:shadow-xl inline-flex items-center gap-3"
           >
             <span>{t.insights.readAll}</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>

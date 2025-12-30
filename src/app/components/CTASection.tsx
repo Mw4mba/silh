@@ -60,7 +60,7 @@ export default function CTASection() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href="/careers"
-            className="group px-10 py-5 bg-white text-[#2E7D32] font-medium rounded-sm hover:bg-[#A5D6A7] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
+            className="btn-slide-fill group px-10 py-5 font-medium rounded-sm shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
             <span>{t.cta.searchApply}</span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ export default function CTASection() {
           </a>
           <a
             href="/about"
-            className="group px-10 py-5 bg-transparent text-white font-medium rounded-sm border-2 border-white hover:bg-white hover:text-[#2E7D32] transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
+            className="btn-slide-fill group px-10 py-5 font-medium rounded-sm shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
           >
             <span>Life at <span style={{ fontFamily: "'Ruslan Display', serif", fontSize: '1.3em', lineHeight: '1' }}>LBYA</span></span>
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
