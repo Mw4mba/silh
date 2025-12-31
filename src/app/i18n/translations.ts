@@ -371,13 +371,13 @@ export const translations: Record<Language, Translations> = {
           description: 'Transforming urban infrastructure with sustainable design principles, integrating modern transit systems and green spaces for a rapidly growing metropolis.',
         },
         stockholm: {
-          title: 'Stockholm Transit Hub',
+          title: 'Stockholm',
           location: 'Sweden',
           category: 'Transport Infrastructure',
           description: 'Advancing urban mobility through independent structural design audits, ensuring compliance with Eurocode and Swedish NA while balancing heritage preservation, structural safety, durability, and sustainable performance.',
         },
         greenValley: {
-          title: 'Cape Town Coastal District',
+          title: 'Cape Town',
           location: 'South Africa',
           category: 'Mixed-Use Development',
           description: 'Creating resilient coastal communities through sustainable design, integrating residential and commercial spaces with climate-adaptive infrastructure and renewable energy.',

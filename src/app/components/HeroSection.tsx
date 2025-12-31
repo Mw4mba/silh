@@ -22,7 +22,8 @@ export default function HeroSection() {
     "/Website/background.png",
     "/Website/ou6zqgdxncasacosmossar4.jpg",
     "/Website/pngtree-tree-roots-close-up-photo-image_15824685.jpg",
-    "/Website/selva-de-pedra-casas-que-exploram-o-contraste-do-concreto-na-vegetacao_14.jpg"
+    "/Website/selva-de-pedra-casas-que-exploram-o-contraste-do-concreto-na-vegetacao_14.jpg",
+    "/Website/849bd6dd-133e-408e-83ee-169dc1754581.png"
   ];
 
   const carouselItems = [

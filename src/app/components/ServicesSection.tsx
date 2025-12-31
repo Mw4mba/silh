@@ -15,7 +15,7 @@ export default function ServicesSection() {
     structural: '/Website/STRUCTURAL.png',
     bim: '/images/services/bim.jpg',
     it: '/images/insights/digital-twin.jpg',
-    mining: '/images/insights/carbon-materials.jpg',
+    mining: '/Website/MINING.jpg',
   };
 
   // Slug mapping for service detail pages

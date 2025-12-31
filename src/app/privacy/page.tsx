@@ -11,7 +11,7 @@ export default function PrivacyPage() {
   return (
     <main className="w-full overflow-x-hidden">
       <Navbar />
-      
+
       {/* Hero Section - Insights Style */}
       <section className="relative min-h-[40vh] flex items-center justify-center bg-[#2E7D32] py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
       {/* Content Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-12">
-          
+
           {/* Introduction */}
           <div className="mb-12">
             <h2 className="text-3xl font-semibold text-[#2E7D32] mb-4">1. Introduction</h2>
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
             <p className="text-[#37474F] leading-relaxed mb-4">
               Under applicable data protection legislation, you have the following rights:
             </p>
-            
+
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-medium text-[#37474F] mb-2">Right of Access</h3>
@@ -202,9 +202,9 @@ export default function PrivacyPage() {
             </p>
             <div className="bg-[#F5F5DC] p-6 rounded-sm">
               <p className="text-[#37474F] mb-2"><strong>LBYA AB</strong></p>
-              <p className="text-[#37474F] mb-2">Email: privacy@lbya.com</p>
+              <p className="text-[#37474F] mb-2">Email: info@lbya.se</p>
               <p className="text-[#37474F] mb-2">Address: [Company Address]</p>
-              <p className="text-[#37474F]">Data Protection Officer: dpo@lbya.com</p>
+              <p className="text-[#37474F]">Data Protection Officer: info@lbya.se</p>
             </div>
           </div>
 

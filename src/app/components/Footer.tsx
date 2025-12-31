@@ -84,8 +84,8 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6 uppercase">{t.footer.company.contact}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:info@company.com" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
-                  info@company.com
+                <a href="mailto:info@lbya.se" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                  info@lbya.se
                 </a>
               </li>
               <li>

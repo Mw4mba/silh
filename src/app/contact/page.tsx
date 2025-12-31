@@ -9,7 +9,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#2E7D32]">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 px-6 bg-[#2E7D32]">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
@@ -98,8 +98,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-white/60">Email</p>
-                    <a href="mailto:info@lbya.com" className="text-white hover:text-white/80 text-lg">
-                      info@lbya.com
+                    <a href="mailto:info@lbya.se" className="text-white hover:text-white/80 text-lg">
+                      info@lbya.se
                     </a>
                   </div>
                 </div>
@@ -145,15 +145,15 @@ export default function ContactPage() {
                 <p><strong>Sunday:</strong> Closed</p>
               </div>
             </div>
-            
+
             {/* Map Placeholder */}
             <div className="h-64 bg-[#E8F5E9] rounded-sm flex items-center justify-center border border-[#2E7D32]/20">
-               <div className="text-center">
-                  <svg className="w-12 h-12 text-[#2E7D32]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                  </svg>
-                  <span className="text-[#2E7D32]/60 font-medium">Map View</span>
-               </div>
+              <div className="text-center">
+                <svg className="w-12 h-12 text-[#2E7D32]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+                <span className="text-[#2E7D32]/60 font-medium">Map View</span>
+              </div>
             </div>
           </div>
         </div>
