@@ -12,6 +12,19 @@ export default function HeroSection() {
   const [currentTextIndex, setCurrentTextIndex] = React.useState(0);
   const textRef = useRef<HTMLParagraphElement>(null);
 
+  // Background Image Carousel State
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  const heroImages = [
+    "/Website/2eff78f1-25dd-4e64-8868-938ea919ab70.png",
+    "/Website/61MQVbDRUuL._AC_UF894,1000_QL80_.jpg",
+    "/Website/ELw6mf7p6zLJSRcQqxKd7M.jpg",
+    "/Website/MINING.jpg",
+    "/Website/background.png",
+    "/Website/ou6zqgdxncasacosmossar4.jpg",
+    "/Website/pngtree-tree-roots-close-up-photo-image_15824685.jpg",
+    "/Website/selva-de-pedra-casas-que-exploram-o-contraste-do-concreto-na-vegetacao_14.jpg"
+  ];
+
   const carouselItems = [
     t.hero.subtitle,
     "Our vision is inspired by nature and shaping a sustainable future.",
@@ -20,6 +33,7 @@ export default function HeroSection() {
     "Together, we build spaces that endure, inspire, and respect the world around us."
   ];
 
+  // Text Carousel Interval
   useEffect(() => {
     const interval = setInterval(() => {
       // Fade out
@@ -45,6 +59,15 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [carouselItems.length]);
 
+  // Image Carousel Interval
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(imageInterval);
+  }, [heroImages.length]);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(titleRef.current, {
@@ -68,13 +91,23 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen flex flex-col justify-end overflow-hidden bg-[#37474F]">
-      {/* Full-screen background image with overlay */}
+      {/* Full-screen background image carousel with overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/new-hero.jpg"
-          alt="Modern sustainable architecture"
-          className="w-full h-full object-cover"
-        />
+        {heroImages.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+          >
+            <Image
+              src={src}
+              alt="Background"
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(55,71,79,0.5)_60%,_rgba(46,125,50,0.8)_100%)]" />
       </div>
 

@@ -12,7 +12,7 @@ export default function ServicesSection() {
   // Image mapping for services
   const serviceImages: Record<keyof typeof t.services.items, string> = {
     sustainable: '/images/services/sustainable.jpg',
-    structural: '/images/services/structural.jpg',
+    structural: '/Website/STRUCTURAL.png',
     bim: '/images/services/bim.jpg',
     it: '/images/insights/digital-twin.jpg',
     mining: '/images/insights/carbon-materials.jpg',
