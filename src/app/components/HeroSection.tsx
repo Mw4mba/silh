@@ -15,15 +15,10 @@ export default function HeroSection() {
   // Background Image Carousel State
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
   const heroImages = [
-    "/Website/2eff78f1-25dd-4e64-8868-938ea919ab70.png",
-    "/Website/61MQVbDRUuL._AC_UF894,1000_QL80_.jpg",
+    "/Website/849bd6dd-133e-408e-83ee-169dc1754581.png",
     "/Website/ELw6mf7p6zLJSRcQqxKd7M.jpg",
-    "/Website/MINING.jpg",
-    "/Website/background.png",
-    "/Website/ou6zqgdxncasacosmossar4.jpg",
-    "/Website/pngtree-tree-roots-close-up-photo-image_15824685.jpg",
-    "/Website/selva-de-pedra-casas-que-exploram-o-contraste-do-concreto-na-vegetacao_14.jpg",
-    "/Website/849bd6dd-133e-408e-83ee-169dc1754581.png"
+    "/Website/2.png",
+    "/Website/3.png"
   ];
 
   const carouselItems = [

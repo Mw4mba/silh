@@ -46,17 +46,10 @@ export default function Navbar() {
           ease: 'power3.out'
         });
       }
-      
-      if (sidebarRef.current) {
-        gsap.to(sidebarRef.current, {
-          borderLeftColor: 'transparent',
-          duration: 0.3
-        });
-      }
 
       if (menuItemsRef.current) {
         const items = menuItemsRef.current.querySelectorAll('a');
-        gsap.fromTo(items, 
+        gsap.fromTo(items,
           { opacity: 0, x: 20 },
           { opacity: 1, x: 0, duration: 0.4, stagger: 0.1, delay: 0.2, ease: 'power2.out' }
         );
@@ -68,13 +61,6 @@ export default function Navbar() {
           x: '100%',
           duration: 0.5,
           ease: 'power3.inOut'
-        });
-      }
-      
-      if (sidebarRef.current) {
-        gsap.to(sidebarRef.current, {
-          borderLeftColor: 'white',
-          duration: 0.3
         });
       }
     }
@@ -108,15 +94,15 @@ export default function Navbar() {
       {isMenuOpen && (
         <>
           {/* Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[60] lg:hidden"
             onClick={() => setIsMenuOpen(false)}
           />
-          
+
           {/* Sidebar */}
           <div
             ref={menuRef}
-            className="fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#2E7D32] z-[61] lg:hidden border-l border-white shadow-2xl flex flex-col justify-center items-center px-8"
+            className="fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#2E7D32] z-[61] lg:hidden shadow-2xl flex flex-col justify-center items-center px-8"
           >
             <button
               onClick={() => setIsMenuOpen(false)}
@@ -124,7 +110,7 @@ export default function Navbar() {
             >
               ×
             </button>
-            
+
             <nav className="flex flex-col gap-8 text-center">
               {menuItems.map((item) => (
                 <TransitionLink
@@ -142,9 +128,9 @@ export default function Navbar() {
       )}
 
       {/* Desktop Side Navbar - COWI Style */}
-      <nav 
+      <nav
         ref={sidebarRef}
-        className="hidden lg:flex fixed right-0 top-0 h-screen w-14 bg-[#37474F] z-40 flex-col items-center justify-between py-8 border-l border-white"
+        className="hidden lg:flex fixed right-0 top-0 h-screen w-14 bg-[#37474F] z-40 flex-col items-center justify-between py-8"
       >
         {/* Hamburger at Top */}
         <button
@@ -169,9 +155,9 @@ export default function Navbar() {
       </nav>
 
       {/* Desktop Slide-out Menu - COWI Style */}
-      <div 
+      <div
         ref={desktopMenuRef}
-        className="hidden lg:block fixed right-14 top-0 h-screen w-80 bg-[#37474F] shadow-2xl z-30 border-l border-white"
+        className="hidden lg:block fixed right-14 top-0 h-screen w-80 bg-[#37474F] shadow-2xl z-30"
         style={{ transform: 'translateX(100%)' }}
       >
         <div className="flex flex-col h-full justify-center px-12">
@@ -204,31 +190,30 @@ export default function Navbar() {
             {(['EN', 'FR', 'SV'] as Language[]).map((lang, index) => (
               <button
                 key={lang}
-                className={`px-3 py-1.5 text-sm font-medium transition-colors ${
-                  lang === language
-                    ? 'text-white'
-                    : 'text-white/60 hover:text-white'
-                } ${index < 2 ? 'border-r border-white/30' : ''}`}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${lang === language
+                  ? 'text-white'
+                  : 'text-white/60 hover:text-white'
+                  } ${index < 2 ? 'border-r border-white/30' : ''}`}
                 onClick={() => handleLanguageClick(lang)}
               >
                 {lang}
               </button>
             ))}
           </div>
-          
+
           {/* Dropdown for additional languages (desktop) / Main dropdown (mobile) */}
           <div className="relative md:ml-1">
-            <button 
+            <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
               className="flex items-center justify-center gap-1 text-white/80 hover:text-white transition-colors focus:outline-none"
               aria-label="Select language"
             >
               {/* Show current language code on mobile */}
               <span className="md:hidden text-sm font-medium">{language}</span>
-              <svg 
-                className={`w-4 h-4 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className={`w-4 h-4 transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -237,19 +222,18 @@ export default function Navbar() {
 
             {isLangMenuOpen && (
               <>
-                <div 
-                  className="fixed inset-0 z-40" 
+                <div
+                  className="fixed inset-0 z-40"
                   onClick={() => setIsLangMenuOpen(false)}
                 />
                 <div className="absolute top-full left-0 mt-2 py-2 w-48 bg-white shadow-lg rounded-sm border border-[#2E7D32]/10 flex flex-col z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                   {languageOptions.map((lang) => (
                     <button
                       key={lang.code}
-                      className={`text-sm px-4 py-2.5 hover:bg-[#F5F5DC] transition-colors text-left ${
-                        lang.code === language 
-                          ? 'text-[#2E7D32] font-semibold bg-[#F5F5DC]/50' 
-                          : 'text-[#37474F]/70 font-medium'
-                      }`}
+                      className={`text-sm px-4 py-2.5 hover:bg-[#F5F5DC] transition-colors text-left ${lang.code === language
+                        ? 'text-[#2E7D32] font-semibold bg-[#F5F5DC]/50'
+                        : 'text-[#37474F]/70 font-medium'
+                        }`}
                       onClick={() => {
                         handleLanguageClick(lang.code);
                         setIsLangMenuOpen(false);
@@ -274,8 +258,8 @@ export default function Navbar() {
               style={{ filter: 'invert(1) brightness(2)' }}
             />
           </div>
-          <span 
-            className="font-bold tracking-[0.15em] text-white leading-none text-2xl md:text-[42px]" 
+          <span
+            className="font-bold tracking-[0.15em] text-white leading-none text-2xl md:text-[42px]"
             style={{ fontFamily: "'Ruslan Display', serif" }}
           >
             LBYA
@@ -289,19 +273,16 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`h-0.5 w-6 bg-white rounded transition-transform origin-center ${
-              isMenuOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
+            className={`h-0.5 w-6 bg-white rounded transition-transform origin-center ${isMenuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
           />
           <span
-            className={`h-0.5 w-6 bg-white rounded transition-opacity ${
-              isMenuOpen ? 'opacity-0' : ''
-            }`}
+            className={`h-0.5 w-6 bg-white rounded transition-opacity ${isMenuOpen ? 'opacity-0' : ''
+              }`}
           />
           <span
-            className={`h-0.5 w-6 bg-white rounded transition-transform origin-center ${
-              isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
+            className={`h-0.5 w-6 bg-white rounded transition-transform origin-center ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
           />
         </button>
       </div>
