@@ -21,13 +21,7 @@ export default function HeroSection() {
     "/Website/3.png"
   ];
 
-  const carouselItems = [
-    t.hero.subtitle,
-    "Our vision is inspired by nature and shaping a sustainable future.",
-    "We design with purpose, precision, and long-term resilience in mind.",
-    "Every solution we create reflects harmony between innovation and the environment.",
-    "Together, we build spaces that endure, inspire, and respect the world around us."
-  ];
+  const carouselItems = t.hero.carouselItems;
 
   // Text Carousel Interval
   useEffect(() => {
@@ -109,14 +103,29 @@ export default function HeroSection() {
 
       <div className="relative z-10 w-full px-6 lg:px-12 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
         {/* Bottom Left Content - Title */}
-        <div className="flex flex-col justify-end">
+        <div className="flex flex-col justify-end items-center max-w-2xl mx-auto lg:mx-0">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 mb-6">
+            <Image
+              src="/logoC.svg"
+              alt="LBYA Logo"
+              fill
+              className="object-contain"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
+          </div>
           <h1
             ref={titleRef}
-            className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-tight tracking-tight max-w-2xl"
+            className="text-center"
           >
-            <span className="font-semibold">{t.hero.title}</span>
-            <br />
-            <span className="font-semibold">{t.hero.titleBold}</span>
+            <span
+              className="block font-bold tracking-[0.15em] text-white leading-none text-4xl md:text-6xl mb-4"
+              style={{ fontFamily: "'Ruslan Display', serif" }}
+            >
+              LBYA
+            </span>
+            <span className="block text-lg md:text-2xl text-white/90 font-light tracking-wide">
+              {t.hero.slogan}
+            </span>
           </h1>
         </div>
 

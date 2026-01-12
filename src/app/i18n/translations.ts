@@ -13,8 +13,10 @@ export interface Translations {
     title: string;
     titleBold: string;
     subtitle: string;
+    slogan: string;
     ctaWhatWeDo: string;
     ctaProjects: string;
+    carouselItems: string[];
   };
   services: {
     title: string;
@@ -198,8 +200,16 @@ export const translations: Record<Language, Translations> = {
       title: 'Rooted in Nature,',
       titleBold: 'Built for the Future',
       subtitle: 'Combining future-focused thinking and technical excellence to create sustainable infrastructure that shapes communities for generations.',
+      slogan: 'Rooted in Nature, designed for the future',
       ctaWhatWeDo: 'What we do',
       ctaProjects: 'Our projects',
+      carouselItems: [
+        'Combining future-focused thinking and technical excellence to create sustainable infrastructure that shapes communities for generations.',
+        'Our vision is inspired by nature and shaping a sustainable future.',
+        'We design with purpose, precision, and long-term resilience in mind.',
+        'Every solution we create reflects harmony between innovation and the environment.',
+        'Together, we build spaces that endure, inspire, and respect the world around us.',
+      ],
     },
     services: {
       title: 'Shaping the future',
@@ -441,8 +451,16 @@ export const translations: Record<Language, Translations> = {
       title: 'Ensemble, nous concevons',
       titleBold: 'un avenir viable',
       subtitle: 'Combinant une réflexion tournée vers l\'avenir et l\'excellence technique pour créer des infrastructures durables qui façonnent les communautés pour les générations futures.',
+      slogan: 'Enraciné dans la nature, conçu pour l\'avenir',
       ctaWhatWeDo: 'Ce que nous faisons',
       ctaProjects: 'Nos projets',
+      carouselItems: [
+        'Combinant une réflexion tournée vers l\'avenir et l\'excellence technique pour créer des infrastructures durables.',
+        'Notre vision s\'inspire de la nature pour façonner un avenir durable.',
+        'Nous concevons avec intention, précision et résilience à long terme.',
+        'Chaque solution que nous créons reflète l\'harmonie entre innovation et environnement.',
+        'Ensemble, nous construisons des espaces qui durent, inspirent et respectent le monde.',
+      ],
     },
     services: {
       title: 'Façonner l\'avenir',
@@ -684,8 +702,16 @@ export const translations: Record<Language, Translations> = {
       title: 'Tillsammans skapar vi',
       titleBold: 'en hållbar framtid',
       subtitle: 'Vi kombinerar framtidsfokuserat tänkande och teknisk excellens för att skapa hållbar infrastruktur som formar samhällen för kommande generationer.',
+      slogan: 'Rotad i naturen, designad för framtiden',
       ctaWhatWeDo: 'Vad vi gör',
       ctaProjects: 'Våra projekt',
+      carouselItems: [
+        'Vi kombinerar framtidsfokuserat tänkande och teknisk excellens för att skapa hållbar infrastruktur.',
+        'Vår vision inspireras av naturen och formar en hållbar framtid.',
+        'Vi designar med syfte, precision och långsiktig motståndskraft i åtanke.',
+        'Varje lösning vi skapar återspeglar harmoni mellan innovation och miljö.',
+        'Tillsammans bygger vi utrymmen som består, inspirerar och respekterar världen.',
+      ],
     },
     services: {
       title: 'Forma framtiden',

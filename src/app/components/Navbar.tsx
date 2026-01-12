@@ -250,14 +250,7 @@ export default function Navbar() {
 
         {/* Center - Logo and LBYA Label */}
         <TransitionLink href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-4">
-          <div>
-            <img
-              src="/logoA.svg"
-              alt="LBYA AB"
-              className="w-10 h-10 md:w-14 md:h-14 object-contain"
-              style={{ filter: 'invert(1) brightness(2)' }}
-            />
-          </div>
+
           <span
             className="font-bold tracking-[0.15em] text-white leading-none text-2xl md:text-[42px]"
             style={{ fontFamily: "'Ruslan Display', serif" }}
