@@ -5,6 +5,8 @@ import { Providers } from "./providers";
 import { TransitionProvider } from "./context/TransitionContext";
 import CookieConsent from "./components/CookieConsent";
 
+import PageLabelSidebar from "./components/PageLabelSidebar";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -31,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased bg-[#F5F5DC]`}
       >
+        <PageLabelSidebar />
         <Providers>
           <TransitionProvider>
             {children}
