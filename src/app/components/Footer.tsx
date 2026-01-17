@@ -109,9 +109,9 @@ export default function Footer() {
               <a href="/privacy" className="text-[#A5D6A7] hover:text-white transition-colors">
                 Data protection commitment
               </a>
-              <button onClick={() => window.location.reload()} className="text-[#A5D6A7] hover:text-white transition-colors">
+              <a href="/consent" className="text-[#A5D6A7] hover:text-white transition-colors">
                 Manage consent
-              </button>
+              </a>
               <a href="https://www.linkedin.com/company/lbya/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-[#A5D6A7] hover:text-white transition-colors">
                 LinkedIn
               </a>
