@@ -11,69 +11,115 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+import Image from 'next/image';
+
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // LBYA Animation
+    // Wait for DOM to be ready
+    const timer = setTimeout(() => {
       if (wrapperRef.current && textRef.current) {
-        gsap.fromTo(textRef.current,
-          { y: '100%' },
-          {
-            y: '0%',
-            ease: 'none',
-            scrollTrigger: {
-              trigger: wrapperRef.current,
-              start: 'top top',
-              end: '+=100%',
-              scrub: true,
-              pin: true,
+        const ctx = gsap.context(() => {
+          gsap.fromTo(textRef.current,
+            { y: '100%' },
+            {
+              y: '0%',
+              ease: 'none',
+              scrollTrigger: {
+                trigger: wrapperRef.current,
+                start: 'top top',
+                end: '+=100%',
+                scrub: true,
+                pin: true,
+                pinSpacing: true,
+              }
             }
-          }
-        );
-      }
-    }, heroRef);
+          );
+        }, wrapperRef);
 
-    return () => ctx.revert();
+        return () => ctx.revert();
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        {/* Hero Section */}
-        <div className="mb-24 text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-light text-[#2E7D32] mb-8 leading-tight tracking-tight">
+
+      {/* Visual Hero Section */}
+      <section className="relative h-[80vh] w-full overflow-hidden">
+        <Image
+          src="/Website/2.png"
+          alt="About Us Hero"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#2E7D32] via-[#2E7D32]/40 to-transparent" />
+
+        {/* Content */}
+        <div className="absolute bottom-0 left-0 w-full px-6 pb-12 md:pb-24">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-7xl md:text-9xl font-bold text-white tracking-tighter leading-none">
+              Our Story
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      {/* Intro Text Section - Green */}
+      <section className="bg-[#2E7D32] py-24 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl md:text-7xl font-light text-white mb-8 leading-tight tracking-tight">
             Sustainable design isn’t a feature,<br />
             <span className="font-semibold">it’s a performance standard.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-[#37474F]/80 leading-relaxed font-light">
+          </h2>
+          <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
             We help clients reduce operational energy, embodied carbon, and future risk while delivering high-quality architecture that stands out.
           </p>
         </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6 py-24">
 
         {/* Mission Section - Inspired by Jeton's "Money, but better" */}
         {/* What We Do Section */}
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
-          <div className="relative h-[600px] w-full rounded-sm overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1518005068251-37900150dfca?q=80&w=1920&auto=format&fit=crop"
-              alt="Sustainable architecture integrating nature and concrete"
-              className="absolute inset-0 w-full h-full object-cover"
+        {/* What We Do Section */}
+        <div className="relative min-h-[800px] py-12 mb-32">
+          {/* Centered Logo */}
+          <div className="absolute inset-0 flex items-center justify-center z-0">
+            <Image
+              src="/logoC.svg"
+              alt="LBYA"
+              width={400}
+              height={400}
+              className="object-contain opacity-20"
+              style={{ filter: 'invert(58%) sepia(8%) saturate(2250%) hue-rotate(352deg) brightness(96%) contrast(89%)' }}
             />
           </div>
-          <div>
-            <h2 className="text-4xl md:text-5xl font-light text-[#2E7D32] mb-8">
-              What we do
-            </h2>
-            <p className="text-xl text-[#37474F]/80 leading-relaxed mb-6">
-              We create sustainable architectural solutions that balance design quality, functionality, and environmental performance. Our approach integrates climate-responsive design, energy efficiency, and responsible material selection to reduce environmental impact while enhancing comfort and long-term value.
-            </p>
-            <p className="text-xl text-[#37474F]/80 leading-relaxed">
-              By combining architectural expertise with engineering insight and BIM-based workflows, we deliver resilient, future-ready buildings tailored to their context and users.
-            </p>
+
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 w-full h-full min-h-[700px]">
+            {/* Top Left Content */}
+            <div className="md:self-start">
+              <h2 className="text-4xl md:text-5xl font-light text-[#2E7D32] mb-8">
+                What we do
+              </h2>
+              <p className="text-xl text-[#37474F]/80 leading-relaxed">
+                We create sustainable architectural solutions that balance design quality, functionality, and environmental performance. Our approach integrates climate-responsive design, energy efficiency, and responsible material selection to reduce environmental impact while enhancing comfort and long-term value.
+              </p>
+            </div>
+
+            {/* Bottom Right Content */}
+            <div className="md:col-start-2 md:self-end md:text-right">
+              <p className="text-xl text-[#37474F]/80 leading-relaxed">
+                By combining architectural expertise with engineering insight and BIM-based workflows, we deliver resilient, future-ready buildings tailored to their context and users.
+              </p>
+            </div>
           </div>
         </div>
 

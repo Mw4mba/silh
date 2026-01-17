@@ -27,16 +27,11 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold text-2xl mb-6 uppercase" style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</h4>
+            <h4 className="font-bold text-2xl mb-6">Shortcuts</h4>
             <ul className="space-y-3">
               <li>
                 <a href="/about" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
                   {t.footer.company.about}
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
-                  {t.footer.resources.projects}
                 </a>
               </li>
               <li>
@@ -54,7 +49,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-6 uppercase">OUR SOLUTIONS</h4>
+            <h4 className="font-bold text-lg mb-6">Our Solutions</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
@@ -81,7 +76,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-lg mb-6 uppercase">{t.footer.company.contact}</h4>
+            <h4 className="font-bold text-lg mb-6">{t.footer.company.contact}</h4>
             <ul className="space-y-3">
               <li>
                 <a href="mailto:info@lbya.se" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">

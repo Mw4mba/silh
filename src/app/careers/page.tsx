@@ -34,7 +34,7 @@ export default function CareersPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 px-6 bg-[#2E7D32]">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
@@ -53,41 +53,29 @@ export default function CareersPage() {
 
       <div className="max-w-7xl mx-auto px-6 py-24">
 
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-[#2E7D32] mb-12 text-center">Why Work With Us?</h2>
-          <div className="grid md:grid-cols-3 gap-8 md:gap-6">
-            <div ref={(el) => { cardsRef.current[0] = el; }} className="bg-[#F5F5DC] p-8 rounded-sm md:mt-0">
-              <div className="w-16 h-16 mb-6 flex items-center justify-center">
-                <svg className="w-10 h-10 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium text-[#2E7D32] mb-3">Impactful Work</h3>
-              <p className="text-[#37474F]/80">
+        <div className="bg-[#2E7D32] p-8 md:p-16 rounded-sm mb-16">
+          <h2 className="text-3xl font-light text-[#F5F5DC] mb-12 text-center">Why Work With Us?</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div ref={(el) => { cardsRef.current[0] = el; }} className="border-t border-[#F5F5DC]/20 pt-8">
+              <span className="text-6xl font-light text-[#F5F5DC]/50 mb-6 block">01.</span>
+              <h3 className="text-2xl font-medium text-[#F5F5DC] mb-4">Impactful Work</h3>
+              <p className="text-[#F5F5DC]/80 leading-relaxed">
                 Contribute to projects that make a real difference in creating a sustainable future.
               </p>
             </div>
 
-            <div ref={(el) => { cardsRef.current[1] = el; }} className="bg-[#F5F5DC] p-8 rounded-sm md:mt-12">
-              <div className="w-16 h-16 mb-6 flex items-center justify-center">
-                <svg className="w-10 h-10 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium text-[#2E7D32] mb-3">Collaborative Culture</h3>
-              <p className="text-[#37474F]/80">
+            <div ref={(el) => { cardsRef.current[1] = el; }} className="border-t border-[#F5F5DC]/20 pt-8 md:mt-0">
+              <span className="text-6xl font-light text-[#F5F5DC]/50 mb-6 block">02.</span>
+              <h3 className="text-2xl font-medium text-[#F5F5DC] mb-4">Collaborative Culture</h3>
+              <p className="text-[#F5F5DC]/80 leading-relaxed">
                 Work with talented professionals in an environment that values diversity and teamwork.
               </p>
             </div>
 
-            <div ref={(el) => { cardsRef.current[2] = el; }} className="bg-[#F5F5DC] p-8 rounded-sm md:mt-6">
-              <div className="w-16 h-16 mb-6 flex items-center justify-center">
-                <svg className="w-10 h-10 text-[#2E7D32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium text-[#2E7D32] mb-3">Growth & Development</h3>
-              <p className="text-[#37474F]/80">
+            <div ref={(el) => { cardsRef.current[2] = el; }} className="border-t border-[#F5F5DC]/20 pt-8 md:mt-0">
+              <span className="text-6xl font-light text-[#F5F5DC]/50 mb-6 block">03.</span>
+              <h3 className="text-2xl font-medium text-[#F5F5DC] mb-4">Growth & Development</h3>
+              <p className="text-[#F5F5DC]/80 leading-relaxed">
                 Access continuous learning opportunities and clear career progression paths.
               </p>
             </div>
@@ -99,12 +87,12 @@ export default function CareersPage() {
           <p className="text-[#37474F]/80 mb-8">
             We currently have no open positions. Check back soon for new opportunities, or submit your application below to be considered for future roles.
           </p>
-          
-          <div className="rounded-sm p-12 text-center bg-[#2E7D32]">
-            <svg className="w-16 h-16 text-white mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+          <div className="rounded-sm p-12 text-center bg-white border border-[#2E7D32]">
+            <svg className="w-16 h-16 text-[#2E7D32] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <p className="text-lg text-white/90 font-medium">No current listings</p>
+            <p className="text-lg text-[#2E7D32] font-medium">No current listings</p>
           </div>
         </div>
 

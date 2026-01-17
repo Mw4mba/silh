@@ -38,6 +38,25 @@ export default function Navbar() {
     const tl = gsap.timeline();
 
     if (isMenuOpen) {
+      if (menuRef.current) {
+        // Mobile Menu Animation (Top to Bottom)
+        gsap.to(menuRef.current, {
+          y: '0%',
+          duration: 0.5,
+          ease: 'power3.out',
+          pointerEvents: 'auto'
+        });
+
+        // Animate items
+        if (menuRef.current) {
+          const items = menuRef.current.querySelectorAll('a');
+          gsap.fromTo(items,
+            { opacity: 0, y: -20 },
+            { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, delay: 0.3, ease: 'power2.out' }
+          );
+        }
+      }
+
       // Desktop Animation
       if (desktopMenuRef.current) {
         tl.to(desktopMenuRef.current, {
@@ -55,7 +74,17 @@ export default function Navbar() {
         );
       }
     } else {
-      // Close Animation
+      if (menuRef.current) {
+        // Mobile Menu Close Animation (Bottom to Top)
+        gsap.to(menuRef.current, {
+          y: '-100%',
+          duration: 0.5,
+          ease: 'power3.inOut',
+          pointerEvents: 'none'
+        });
+      }
+
+      // Desktop Close Animation
       if (desktopMenuRef.current) {
         tl.to(desktopMenuRef.current, {
           x: '100%',
@@ -90,42 +119,25 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[60] lg:hidden"
-            onClick={() => setIsMenuOpen(false)}
-          />
-
-          {/* Sidebar */}
-          <div
-            ref={menuRef}
-            className="fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#2E7D32] z-[61] lg:hidden shadow-2xl flex flex-col justify-center items-center px-8"
-          >
-            <button
+      {/* Mobile Menu Overlay - Slide from Top */}
+      <div
+        ref={menuRef}
+        className="fixed top-0 left-0 h-screen w-full bg-[#2E7D32] z-40 lg:hidden shadow-2xl flex flex-col justify-center items-center px-8 pt-20"
+        style={{ transform: 'translateY(-100%)', pointerEvents: 'none' }}
+      >
+        <nav className="flex flex-col gap-8 text-center">
+          {menuItems.map((item) => (
+            <TransitionLink
+              key={item.label}
+              href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className="absolute top-8 right-8 text-white text-4xl font-light hover:rotate-90 transition-transform duration-300"
+              className="text-4xl font-light text-white hover:text-[#A5D6A7] transition-colors tracking-tight"
             >
-              ×
-            </button>
-
-            <nav className="flex flex-col gap-8 text-center">
-              {menuItems.map((item) => (
-                <TransitionLink
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-4xl font-light text-white hover:text-[#A5D6A7] transition-colors tracking-tight"
-                >
-                  {item.label}
-                </TransitionLink>
-              ))}
-            </nav>
-          </div>
-        </>
-      )}
+              {item.label}
+            </TransitionLink>
+          ))}
+        </nav>
+      </div>
 
       {/* Desktop Side Navbar - COWI Style */}
       <nav

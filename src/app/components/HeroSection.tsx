@@ -15,8 +15,8 @@ export default function HeroSection() {
   // Background Image Carousel State
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
   const heroImages = [
-    "/Website/849bd6dd-133e-408e-83ee-169dc1754581.png",
-    "/Website/ELw6mf7p6zLJSRcQqxKd7M.jpg",
+    "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=2070&auto=format&fit=crop", // Stockholm
+    "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=2071&auto=format&fit=crop", // Kinshasa
     "/Website/2.png",
     "/Website/3.png"
   ];
@@ -95,6 +95,7 @@ export default function HeroSection() {
               fill
               className="object-cover"
               priority={index === 0}
+              sizes="100vw"
             />
           </div>
         ))}
