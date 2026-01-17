@@ -111,7 +111,7 @@ export default function AboutPage() {
             "We observed how the construction industry was drifting away from nature. Even the simplest projects ignored their environmental context. The fact that today's infrastructure was not resilient enough for tomorrow's climate ignited our desire to create <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>."
           </blockquote>
           <cite className="text-[#37474F] font-medium not-italic block">
-            — Sarah Chen, CEO of <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>
+            — Silhady T Luboya, CEO of <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>
           </cite>
         </div>
 

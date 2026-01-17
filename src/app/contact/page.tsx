@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -112,8 +113,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-white/60">Phone</p>
-                    <a href="tel:+1234567890" className="text-white hover:text-white/80 text-lg">
-                      +1 (234) 567-890
+                    <a href="tel:+46765960161" className="text-white hover:text-white/80 text-lg">
+                      +46 76 596 01 61
                     </a>
                   </div>
                 </div>
@@ -128,32 +129,32 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium text-white/60">Address</p>
                     <p className="text-white text-lg">
-                      123 Engineering Street<br />
-                      Tech City, TC 12345<br />
-                      Country
+                      Gamla Enköpingsvägen 150<br />
+                      174 64 Sundbyberg<br />
+                      Sweden
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#F5F5DC] p-8 rounded-sm">
-              <h3 className="text-xl font-light text-[#2E7D32] mb-4">Office Hours</h3>
-              <div className="space-y-2 text-[#37474F]/80">
+            <div className="bg-[#2E7D32] border border-[#F5F5DC] p-8 rounded-sm">
+              <h3 className="text-xl font-light text-[#F5F5DC] mb-4">Office Hours</h3>
+              <div className="space-y-2 text-[#F5F5DC]">
                 <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
                 <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
                 <p><strong>Sunday:</strong> Closed</p>
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="h-64 bg-[#E8F5E9] rounded-sm flex items-center justify-center border border-[#2E7D32]/20">
-              <div className="text-center">
-                <svg className="w-12 h-12 text-[#2E7D32]/40 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                </svg>
-                <span className="text-[#2E7D32]/60 font-medium">Map View</span>
-              </div>
+            {/* Map View */}
+            <div className="h-64 relative rounded-sm overflow-hidden border border-[#2E7D32]/20">
+              <Image
+                src="/Website/location_map.png"
+                alt="Location Map - Gamla Enköpingsvägen 150, Sundbyberg"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>

@@ -80,7 +80,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative h-screen flex flex-col justify-end overflow-hidden bg-[#37474F]">
+    <section className="relative h-screen flex flex-col justify-center lg:justify-end overflow-hidden bg-[#37474F]">
       {/* Full-screen background image carousel with overlay */}
       <div className="absolute inset-0 z-0">
         {heroImages.map((src, index) => (
@@ -130,9 +130,9 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom Right Content - Text Carousel & Buttons */}
-        <div className="flex justify-end items-end w-full pr-0 lg:pr-16 xl:pr-24">
-          <div ref={bottomContentRef} className="max-w-xl text-right flex flex-col items-end">
-            <div className="h-24 md:h-28 mb-8 flex items-end justify-end">
+        <div className="flex justify-end items-center lg:items-end w-full pr-0 lg:pr-16 xl:pr-24">
+          <div ref={bottomContentRef} className="max-w-xl text-center lg:text-right flex flex-col items-center lg:items-end">
+            <div className="h-24 md:h-28 mb-8 flex items-end justify-center lg:justify-end">
               <p
                 ref={textRef}
                 className="text-base md:text-lg lg:text-xl text-white/95 font-light leading-relaxed drop-shadow-md"
@@ -141,21 +141,12 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-end">
+            <div className="flex flex-row gap-4 justify-center lg:justify-end w-full">
               <a
                 href="#services"
-                className="btn-slide-fill group px-8 py-4 font-medium rounded-sm shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
+                className="btn-slide-fill group px-6 py-4 font-medium rounded-sm shadow-xl hover:shadow-2xl inline-flex items-center gap-2 justify-center flex-1 sm:flex-none sm:px-8"
               >
                 <span>{t.hero.ctaWhatWeDo}</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-              <a
-                href="#projects"
-                className="btn-slide-fill group px-8 py-4 font-medium rounded-sm shadow-xl hover:shadow-2xl inline-flex items-center gap-3 justify-center"
-              >
-                <span>{t.hero.ctaProjects}</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

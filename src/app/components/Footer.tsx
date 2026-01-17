@@ -89,11 +89,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
-                  +1 (234) 567-890
+                <a href="tel:+46765960161" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                  +46 76 596 01 61
                 </a>
               </li>
-              <li className="text-[#A5D6A7] uppercase">123 Engineering St, Tech City, TC 12345</li>
+              <li className="text-[#A5D6A7] uppercase">Gamla Enköpingsvägen 150, 174 64 Sundbyberg, Sweden</li>
             </ul>
           </div>
         </div>

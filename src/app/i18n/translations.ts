@@ -200,7 +200,7 @@ export const translations: Record<Language, Translations> = {
       title: 'Rooted in Nature,',
       titleBold: 'Built for the Future',
       subtitle: 'Combining future-focused thinking and technical excellence to create sustainable infrastructure that shapes communities for generations.',
-      slogan: 'Rooted in Nature, designed for the future',
+      slogan: 'Rooted in Nature, Designed for the Future',
       ctaWhatWeDo: 'What we do',
       ctaProjects: 'Our projects',
       carouselItems: [
