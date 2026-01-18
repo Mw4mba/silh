@@ -16,7 +16,7 @@ export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
   const heroImages = [
     "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=2070&auto=format&fit=crop", // Stockholm
-    "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=2071&auto=format&fit=crop", // Kinshasa
+    "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?q=80&w=2070&auto=format&fit=crop", // Kinshasa
     "/Website/2.png",
     "/Website/3.png"
   ];

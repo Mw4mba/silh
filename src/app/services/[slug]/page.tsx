@@ -17,7 +17,7 @@ const servicesData = {
     'sustainable-architecture': {
         title: 'Sustainable Architecture',
         heroSubtitle: 'Designing Buildings That Harmonize with Nature',
-        image: '/images/services/sustainable.jpg',
+        image: '/sustainable-architecture-v2.png',
         description: 'We design buildings that harmonize with their environment, integrating passive strategies, renewable energy, and biophilic principles to create spaces that nurture well-being while minimizing ecological impact.',
         sections: [
             {

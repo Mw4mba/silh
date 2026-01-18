@@ -9,7 +9,7 @@ interface TransitionContextType {
 }
 
 const TransitionContext = createContext<TransitionContextType>({
-  navigate: () => {},
+  navigate: () => { },
 });
 
 export const useTransition = () => useContext(TransitionContext);
@@ -62,9 +62,9 @@ export const TransitionProvider = ({ children }: { children: React.ReactNode }) 
   return (
     <TransitionContext.Provider value={{ navigate }}>
       {children}
-      <div 
+      <div
         ref={overlayRef}
-        className="fixed inset-0 bg-[#F5F5DC] z-[9999] opacity-0 pointer-events-none"
+        className="fixed inset-0 bg-[#F5F5DC] z-30 opacity-0 pointer-events-none"
         aria-hidden="true"
       />
     </TransitionContext.Provider>

@@ -27,21 +27,26 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold text-2xl mb-6">Shortcuts</h4>
+            <h4 className="font-bold text-lg mb-6">Shortcuts</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/about" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="/about" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.company.about}
                 </a>
               </li>
               <li>
-                <a href="/careers" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="/careers" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.company.careers}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="#" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.company.news}
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors">
+                  {t.footer.company.mining}
                 </a>
               </li>
             </ul>
@@ -52,22 +57,22 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6">Our Solutions</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.services.sustainable}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.services.structural}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.services.bim}
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="#services" className="text-[#A5D6A7] hover:text-white transition-colors">
                   {t.footer.services.climate}
                 </a>
               </li>
@@ -79,16 +84,16 @@ export default function Footer() {
             <h4 className="font-bold text-lg mb-6">{t.footer.company.contact}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:info@lbya.se" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="mailto:info@lbya.se" className="text-[#A5D6A7] hover:text-white transition-colors">
                   info@lbya.se
                 </a>
               </li>
               <li>
-                <a href="tel:+46765960161" className="text-[#A5D6A7] hover:text-white transition-colors uppercase">
+                <a href="tel:+46765960161" className="text-[#A5D6A7] hover:text-white transition-colors">
                   +46 76 596 01 61
                 </a>
               </li>
-              <li className="text-[#A5D6A7] uppercase">Gamla Enköpingsvägen 150, 174 64 Sundbyberg, Sweden</li>
+              <li className="text-[#A5D6A7]">Gamla Enköpingsvägen 150, 174 64 Sundbyberg, Sweden</li>
             </ul>
           </div>
         </div>

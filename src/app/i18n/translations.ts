@@ -162,6 +162,7 @@ export interface Translations {
       careers: string;
       news: string;
       contact: string;
+      mining: string;
     };
     services: {
       title: string;
@@ -415,6 +416,7 @@ export const translations: Record<Language, Translations> = {
         careers: 'Careers',
         news: 'News',
         contact: 'Contact',
+        mining: 'Mining & Cross-Border Consulting',
       },
       services: {
         title: 'Services',
@@ -666,6 +668,7 @@ export const translations: Record<Language, Translations> = {
         careers: 'Carrières',
         news: 'Actualités',
         contact: 'Contact',
+        mining: 'Conseil Minier & Transfrontalier',
       },
       services: {
         title: 'Services',
@@ -917,6 +920,7 @@ export const translations: Record<Language, Translations> = {
         careers: 'Karriärer',
         news: 'Nyheter',
         contact: 'Kontakt',
+        mining: 'Gruvkonsultation & Gränsöverskridande',
       },
       services: {
         title: 'Tjänster',

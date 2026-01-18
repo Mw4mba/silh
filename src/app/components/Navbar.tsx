@@ -159,11 +159,7 @@ export default function Navbar() {
         <div className="flex-1"></div>
 
         {/* Logo at Bottom */}
-        <div className="flex items-center justify-center mb-2">
-          <TransitionLink href="/">
-            <Logo variant="sidebar" size="sm" rotate={true} />
-          </TransitionLink>
-        </div>
+
       </nav>
 
       {/* Desktop Slide-out Menu - COWI Style */}

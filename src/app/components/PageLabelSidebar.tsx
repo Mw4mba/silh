@@ -51,7 +51,7 @@ export default function PageLabelSidebar() {
     const title = getPageTitle(pathname);
 
     return (
-        <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex items-center justify-center w-24 h-screen pointer-events-none">
+        <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden lg:flex items-center justify-center w-14 h-screen pointer-events-none">
             {/* Use mix-blend-difference to ensure visibility on both dark and light backgrounds if needed, 
            but user specifically asked for "white 50%". 
            If the background is white (like about page), white 50% will be invisible. 
