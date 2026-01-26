@@ -20,7 +20,7 @@ export default function Logo({ variant = 'dark', size = 'md', rotate = false }: 
   const filterClass = variant === 'sidebar' ? 'invert brightness-0 saturate-100' : '';
 
   return (
-    <div 
+    <div
       className={`relative ${rotate ? 'rotate-90' : ''}`}
       style={{
         width: sizes[size].width,
@@ -31,6 +31,7 @@ export default function Logo({ variant = 'dark', size = 'md', rotate = false }: 
         src={logoSrc}
         alt="LBYA AB"
         fill
+        sizes="96px"
         className={`object-contain ${filterClass}`}
         style={variant === 'sidebar' ? { filter: 'invert(1) brightness(2)' } : undefined}
         priority

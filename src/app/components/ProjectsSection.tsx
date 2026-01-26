@@ -17,7 +17,7 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      ...t.projects.items.copenhagen,
+      ...t.projects.items.kinshasa,
       image: 'https://images.unsplash.com/photo-1611348524140-53c9a25263d6?q=80&w=2070&auto=format&fit=crop',
     },
     {
@@ -27,7 +27,7 @@ export default function ProjectsSection() {
     },
     {
       id: 3,
-      ...t.projects.items.greenValley,
+      ...t.projects.items.capetown,
       image: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=2071&auto=format&fit=crop',
     },
   ];
@@ -91,6 +91,7 @@ export default function ProjectsSection() {
                   src={project.image}
                   alt={project.title}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#2E7D32]/60" />

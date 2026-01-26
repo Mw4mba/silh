@@ -56,6 +56,7 @@ export default function AboutPage() {
           src="/Website/2.png"
           alt="About Us Hero"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -157,7 +158,7 @@ export default function AboutPage() {
             "We observed how the construction industry was drifting away from nature. Even the simplest projects ignored their environmental context. The fact that today's infrastructure was not resilient enough for tomorrow's climate ignited our desire to create <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>."
           </blockquote>
           <cite className="text-[#37474F] font-medium not-italic block">
-            — Silhady T Luboya, CEO of <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>
+            <span style={{ fontFamily: "'Ruslan Display', serif" }}>LBYA</span>
           </cite>
         </div>
 
@@ -188,7 +189,7 @@ export default function AboutPage() {
 
       {/* LBYA Animation Section */}
       <div ref={heroRef}>
-        <section ref={wrapperRef} className="relative h-screen w-full bg-[#F5F5DC] overflow-hidden flex flex-col justify-between py-32 px-6">
+        <section ref={wrapperRef} className="relative min-h-[50vh] md:h-screen w-full bg-[#F5F5DC] overflow-hidden flex flex-col justify-center gap-8 md:gap-0 md:justify-between py-12 md:py-32 px-6">
           <div className="max-w-7xl mx-auto w-full">
             <h2 className="text-2xl md:text-3xl font-medium text-[#2E7D32] tracking-wide uppercase">
               Our Philosophy

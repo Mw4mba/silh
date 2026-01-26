@@ -153,6 +153,7 @@ export default function ContactPage() {
                 src="/Website/location_map.png"
                 alt="Location Map - Gamla Enköpingsvägen 150, Sundbyberg"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

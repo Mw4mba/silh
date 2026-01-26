@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import TransitionLink from './TransitionLink';
 import gsap from 'gsap';
 import Logo from './Logo';
@@ -11,14 +12,152 @@ import { useTheme } from '../context/ThemeContext';
 export default function Navbar() {
   const { language, setLanguage, t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [displayText, setDisplayText] = useState('LBYA');
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuItemsRef = useRef<HTMLDivElement>(null);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const desktopMenuRef = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLSpanElement>(null);
+  const revertTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Route to display name mapping
+  const getPageName = useCallback(() => {
+    const routeMap: Record<string, string> = {
+      '/': 'Home',
+      '/about': 'About',
+      '/solutions': 'Solutions',
+      '/insights': 'Insights',
+      '/careers': 'Careers',
+      '/contact': 'Contact',
+      '/privacy': 'Privacy',
+    };
+    // Check for dynamic routes
+    if (pathname.startsWith('/services/')) return 'Services';
+    if (pathname.startsWith('/insights/')) return 'Insights';
+    return routeMap[pathname] || 'LBYA';
+  }, [pathname]);
+
+  // Animate to show page name temporarily (only on mobile/tablet)
+  const showPageName = useCallback(() => {
+    // Skip on large screens (lg: 1024px and above)
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) return;
+    if (isAnimating) return;
+
+    const pageName = getPageName();
+    if (pageName === 'LBYA' || displayText === pageName) return;
+
+    setIsAnimating(true);
+
+    // Clear any existing timeout
+    if (revertTimeoutRef.current) {
+      clearTimeout(revertTimeoutRef.current);
+    }
+
+    // Animate out
+    if (labelRef.current) {
+      gsap.to(labelRef.current, {
+        opacity: 0,
+        y: -15,
+        duration: 0.25,
+        ease: 'power2.in',
+        onComplete: () => {
+          setDisplayText(pageName);
+          // Animate in
+          gsap.fromTo(labelRef.current,
+            { opacity: 0, y: 15 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.35,
+              ease: 'power2.out',
+              onComplete: () => {
+                setIsAnimating(false);
+                // Set timeout to revert to LBYA
+                revertTimeoutRef.current = setTimeout(() => {
+                  if (labelRef.current) {
+                    gsap.to(labelRef.current, {
+                      opacity: 0,
+                      y: -15,
+                      duration: 0.25,
+                      ease: 'power2.in',
+                      onComplete: () => {
+                        setDisplayText('LBYA');
+                        gsap.fromTo(labelRef.current,
+                          { opacity: 0, y: 15 },
+                          { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
+                        );
+                      }
+                    });
+                  }
+                }, 3000);
+              }
+            }
+          );
+        }
+      });
+    }
+  }, [isAnimating, displayText, getPageName]);
+
+  // Trigger on initial load (only after mount)
+  useEffect(() => {
+    setIsMounted(true);
+    const timer = setTimeout(() => {
+      showPageName();
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [pathname]); // Re-trigger when route changes
+
+  // Trigger on page click/tap (only after mount)
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const handleClick = () => {
+      showPageName();
+    };
+
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, [showPageName, isMounted]);
+
+  // Trigger when scrolling stops (only after mount)
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const handleScroll = () => {
+      // Clear previous timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      // Set new timeout - triggers when scrolling stops for 600ms
+      scrollTimeoutRef.current = setTimeout(() => {
+        showPageName();
+      }, 600);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [showPageName, isMounted]);
+
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (revertTimeoutRef.current) clearTimeout(revertTimeoutRef.current);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
+  }, []);
 
   const languageOptions = [
     { code: 'EN' as Language, name: 'English (Global)' },
@@ -122,7 +261,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay - Slide from Top */}
       <div
         ref={menuRef}
-        className="fixed top-0 left-0 h-screen w-full bg-[#2E7D32] z-40 lg:hidden shadow-2xl flex flex-col justify-center items-center px-8 pt-20"
+        className="fixed top-0 left-0 h-screen w-full bg-[#2E7D32] z-[60] lg:hidden shadow-2xl flex flex-col justify-center items-center px-8 pt-20"
         style={{ transform: 'translateY(-100%)', pointerEvents: 'none' }}
       >
         <nav className="flex flex-col gap-8 text-center">
@@ -190,7 +329,10 @@ export default function Navbar() {
       </div>
 
       {/* Top Bar - Language Selector (COWI minimalist style) */}
-      <div className="fixed top-0 left-0 right-0 lg:right-14 h-20 bg-[#2E7D32] backdrop-blur-md z-50 lg:z-50 flex items-center justify-between px-6 border-b border-white/10">
+      <div
+        suppressHydrationWarning
+        className="fixed top-0 left-0 right-0 lg:right-14 h-20 bg-[#2E7D32] backdrop-blur-md z-[70] lg:z-50 flex items-center justify-between px-6 border-b border-white/10"
+      >
         {/* Language Selection (Left) */}
         <div className="flex items-center gap-1">
           {/* Main Language Buttons - Hidden on Mobile */}
@@ -257,13 +399,14 @@ export default function Navbar() {
         </div>
 
         {/* Center - Logo and LBYA Label */}
-        <TransitionLink href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-4">
+        <TransitionLink href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-4 overflow-hidden">
 
           <span
+            ref={labelRef}
             className="font-bold tracking-[0.15em] text-white leading-none text-2xl md:text-[42px]"
-            style={{ fontFamily: "'Ruslan Display', serif" }}
+            style={{ fontFamily: displayText === 'LBYA' ? "'Ruslan Display', serif" : "inherit" }}
           >
-            LBYA
+            {displayText}
           </span>
         </TransitionLink>
 

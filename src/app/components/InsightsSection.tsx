@@ -17,18 +17,18 @@ export default function InsightsSection() {
   const insights = [
     {
       id: 1,
-      ...t.insights.items.climate,
-      image: '/images/insights/climate-resilience.jpg',
+      ...t.insights.items.aiConstruction,
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2670&auto=format&fit=crop',
     },
     {
       id: 2,
-      ...t.insights.items.materials,
-      image: '/images/insights/carbon-materials.jpg',
+      ...t.insights.items.urbanBiodiversity,
+      image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2565&auto=format&fit=crop',
     },
     {
       id: 3,
-      ...t.insights.items.digitalTwin,
-      image: '/images/insights/digital-twin.jpg',
+      ...t.insights.items.climate,
+      image: '/images/insights/climate-resilience.jpg',
     },
   ];
 
@@ -90,6 +90,7 @@ export default function InsightsSection() {
                   src={insight.image}
                   alt={insight.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 left-4">
@@ -124,7 +125,7 @@ export default function InsightsSection() {
 
         <div className="text-center mt-12">
           <a
-            href="#"
+            href="/insights"
             className="btn-slide-fill-green px-8 py-4 font-medium rounded-sm shadow-lg hover:shadow-xl inline-flex items-center gap-3"
           >
             <span>{t.insights.readAll}</span>

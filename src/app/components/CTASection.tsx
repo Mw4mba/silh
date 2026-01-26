@@ -44,6 +44,7 @@ export default function CTASection() {
           src="/images/cta/careers-bg.jpg"
           alt="Team collaboration"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-b from-[#37474F]/80 via-[#2E7D32]/70 to-[#37474F]/80" />

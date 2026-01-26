@@ -17,8 +17,8 @@ export default function HeroSection() {
   const heroImages = [
     "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=2070&auto=format&fit=crop", // Stockholm
     "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?q=80&w=2070&auto=format&fit=crop", // Kinshasa
-    "/Website/2.png",
-    "/Website/3.png"
+    "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=2071&auto=format&fit=crop", // Cape Town
+    "https://images.unsplash.com/photo-1577948000111-9c970dfe3743?q=80&w=2070&auto=format&fit=crop" // Johannesburg
   ];
 
   const carouselItems = t.hero.carouselItems;
@@ -110,6 +110,7 @@ export default function HeroSection() {
               src="/logoC.svg"
               alt="LBYA Logo"
               fill
+              sizes="(max-width: 768px) 192px, 256px"
               className="object-contain"
               style={{ filter: 'brightness(0) invert(1)' }}
             />

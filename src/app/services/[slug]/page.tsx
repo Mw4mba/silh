@@ -115,7 +115,7 @@ const servicesData = {
         ],
     },
     'mining-consulting': {
-        title: 'Mining & Cross-Border Consulting',
+        title: 'Mining  Consulting',
         heroSubtitle: 'Strategic Advisory for International Mining Projects',
         image: '/images/insights/carbon-materials.jpg',
         description: 'We provide specialized consulting services that connect mining companies, investors, and technology partners across Africa and Europe. Our role is to bridge regulatory, technical, and operational gaps, enabling mining projects to move efficiently from opportunity to execution. With deep understanding of African mining environments and European standards, governance, and investors\' expectations, we act as a trusted intermediary for cross-border collaboration.',
@@ -206,6 +206,7 @@ function ServiceDetailContent() {
                         src={service.image}
                         alt={service.title}
                         fill
+                        sizes="100vw"
                         className="object-cover opacity-20"
                     />
                 </div>

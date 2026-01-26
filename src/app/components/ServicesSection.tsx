@@ -135,6 +135,7 @@ export default function ServicesSection() {
                         src={serviceImages[key]}
                         alt={item.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 384px"
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       {/* Overlay for inactive state if needed, or visual cue */}

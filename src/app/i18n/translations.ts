@@ -112,6 +112,18 @@ export interface Translations {
         excerpt: string;
         date: string;
       };
+      aiConstruction: {
+        title: string;
+        category: string;
+        excerpt: string;
+        date: string;
+      };
+      urbanBiodiversity: {
+        title: string;
+        category: string;
+        excerpt: string;
+        date: string;
+      };
     };
   };
   projects: {
@@ -121,7 +133,7 @@ export interface Translations {
     viewProject: string;
     viewAll: string;
     items: {
-      copenhagen: {
+      kinshasa: {
         title: string;
         location: string;
         category: string;
@@ -133,7 +145,7 @@ export interface Translations {
         category: string;
         description: string;
       };
-      greenValley: {
+      capetown: {
         title: string;
         location: string;
         category: string;
@@ -255,7 +267,7 @@ export const translations: Record<Language, Translations> = {
           ],
         },
         mining: {
-          title: 'Mining & Cross-Border Consulting',
+          title: 'Mining  Consulting',
           description: 'Strategic advisory services connecting mining companies, investors, and technology partners across Africa and Europe. We facilitate cross-border collaboration and unlock opportunities in emerging markets.',
           subtext: [
             'Strategic partner identification',
@@ -348,6 +360,18 @@ export const translations: Record<Language, Translations> = {
       readArticle: 'Read article',
       readAll: 'Read all insights',
       items: {
+        aiConstruction: {
+          title: 'The Role of AI in Optimizing Construction Workflows',
+          category: 'Technology',
+          excerpt: 'How artificial intelligence is revolutionizing project management, safety protocols, and operational efficiency in modern construction.',
+          date: 'December 2025',
+        },
+        urbanBiodiversity: {
+          title: 'Integrating Biodiversity into Urban Planning',
+          category: 'Sustainability',
+          excerpt: 'Strategies for creating living cities that support local ecosystems through green corridors and biophilic design.',
+          date: 'November 2025',
+        },
         climate: {
           title: 'Designing for Climate Resilience in Urban Environments',
           category: 'Climate',
@@ -375,7 +399,7 @@ export const translations: Record<Language, Translations> = {
       viewProject: 'View project',
       viewAll: 'View all projects',
       items: {
-        copenhagen: {
+        kinshasa: {
           title: 'Kinshasa Urban Development',
           location: 'Democratic Republic of Congo',
           category: 'Urban Infrastructure',
@@ -387,7 +411,7 @@ export const translations: Record<Language, Translations> = {
           category: 'Transport Infrastructure',
           description: 'Advancing urban mobility through independent structural design audits, ensuring compliance with Eurocode and Swedish NA while balancing heritage preservation, structural safety, durability, and sustainable performance.',
         },
-        greenValley: {
+        capetown: {
           title: 'Cape Town',
           location: 'South Africa',
           category: 'Mixed-Use Development',
@@ -416,7 +440,7 @@ export const translations: Record<Language, Translations> = {
         careers: 'Careers',
         news: 'News',
         contact: 'Contact',
-        mining: 'Mining & Cross-Border Consulting',
+        mining: 'Mining  Consulting',
       },
       services: {
         title: 'Services',
@@ -600,6 +624,18 @@ export const translations: Record<Language, Translations> = {
       readArticle: 'Lire l\'article',
       readAll: 'Tous les insights',
       items: {
+        aiConstruction: {
+          title: 'Le Rôle de l\'IA dans l\'Optimisation des Flux de Travail de Construction',
+          category: 'Technologie',
+          excerpt: 'Comment l\'intelligence artificielle révolutionne la gestion de projet, la sécurité et l\'efficacité opérationnelle.',
+          date: 'Décembre 2025',
+        },
+        urbanBiodiversity: {
+          title: 'Intégrer la Biodiversité dans la Planification Urbaine',
+          category: 'Durabilité',
+          excerpt: 'Stratégies pour créer des villes vivantes qui soutiennent les écosystèmes locaux grâce à la conception biophilique.',
+          date: 'Novembre 2025',
+        },
         climate: {
           title: 'Concevoir pour la Résilience Climatique en Milieu Urbain',
           category: 'Climat',
@@ -627,23 +663,23 @@ export const translations: Record<Language, Translations> = {
       viewProject: 'Voir le projet',
       viewAll: 'Tous les projets',
       items: {
-        copenhagen: {
-          title: 'Quartier du Front de Mer de Copenhague',
-          location: 'Danemark',
-          category: 'Développement Mixte',
-          description: 'Un quartier de front de mer adapté au climat intégrant des toits verts, des parcs de marée et des bâtiments neutres en carbone qui établissent de nouvelles normes en matière de résilience urbaine.',
+        kinshasa: {
+          title: 'Développement Urbain de Kinshasa',
+          location: 'République Démocratique du Congo',
+          category: 'Infrastructure Urbaine',
+          description: 'Transformer l\'infrastructure urbaine avec des principes de conception durable, intégrant des systèmes de transport modernes et des espaces verts pour une métropole en croissance rapide.',
         },
         stockholm: {
-          title: 'Extension de la Gare Centrale de Stockholm',
+          title: 'Stockholm',
           location: 'Suède',
           category: 'Infrastructure de Transport',
-          description: 'Modernisation d\'une structure patrimoniale avec rénovation antisismique et systèmes économes en énergie tout en préservant son caractère architectural.',
+          description: 'Faire progresser la mobilité urbaine grâce à des audits de conception structurelle indépendants, garantissant la conformité avec l\'Eurocode et l\'annexe nationale suédoise.',
         },
-        greenValley: {
-          title: 'Parc d\'Affaires Green Valley',
-          location: 'France',
-          category: 'Commercial',
-          description: 'Un campus de bureaux à consommation nette zéro avec des façades biomimétiques, la collecte des eaux de pluie et des corridors de biodiversité intégrés.',
+        capetown: {
+          title: 'Le Cap',
+          location: 'Afrique du Sud',
+          category: 'Développement Mixte',
+          description: 'Créer des communautés côtières résilientes grâce à une conception durable, intégrant des espaces résidentiels et commerciaux avec une infrastructure adaptée au climat.',
         },
       },
     },
@@ -852,6 +888,18 @@ export const translations: Record<Language, Translations> = {
       readArticle: 'Läs artikel',
       readAll: 'Alla insikter',
       items: {
+        aiConstruction: {
+          title: 'AI:s Roll i Optimering av Byggarbetsflöden',
+          category: 'Teknologi',
+          excerpt: 'Hur artificiell intelligens revolutionerar projektledning, säkerhetsprotokoll och operativ effektivitet i modernt byggande.',
+          date: 'December 2025',
+        },
+        urbanBiodiversity: {
+          title: 'Integrera Biologisk Mångfald i Stadsplanering',
+          category: 'Hållbarhet',
+          excerpt: 'Strategier för att skapa levande städer som stödjer lokala ekosystem genom gröna korridorer och biofilisk design.',
+          date: 'November 2025',
+        },
         climate: {
           title: 'Design för Klimatresiliens i Urbana Miljöer',
           category: 'Klimat',
@@ -879,23 +927,23 @@ export const translations: Record<Language, Translations> = {
       viewProject: 'Visa projekt',
       viewAll: 'Alla projekt',
       items: {
-        copenhagen: {
-          title: 'Köpenhamns Vattenfrontsdistrikt',
-          location: 'Danmark',
-          category: 'Blandat Utveckling',
-          description: 'Ett klimatanpassat vattenfrontsdistrikt som integrerar gröna tak, tidvattensparker och koldioxidneutrala byggnader som sätter nya standarder för urban resiliens.',
+        kinshasa: {
+          title: 'Kinshasa Stadsutveckling',
+          location: 'Demokratiska Republiken Kongo',
+          category: 'Urban Infrastruktur',
+          description: 'Omvandla urban infrastruktur med hållbara designprinciper, integrera moderna transportsystem och gröna ytor för en snabbt växande metropol.',
         },
         stockholm: {
-          title: 'Stockholms Centralstation Utbyggnad',
+          title: 'Stockholm',
           location: 'Sverige',
           category: 'Transportinfrastruktur',
-          description: 'Modernisering av en kulturarvsstruktur med seismisk upprustning och energieffektiva system samtidigt som dess arkitektoniska karaktär bevaras.',
+          description: 'Främja urban mobilitet genom oberoende konstruktionsgranskningar, säkerställa efterlevnad av Eurocode och svensk nationalannex.',
         },
-        greenValley: {
-          title: 'Green Valley Affärspark',
-          location: 'Frankrike',
-          category: 'Kommersiell',
-          description: 'Ett netto-noll kontorskomplex med biomimetiska fasader, regnvatteninsamling och integrerade biodiversitetskorridorer.',
+        capetown: {
+          title: 'Kapstaden',
+          location: 'Sydafrika',
+          category: 'Blandat Utveckling',
+          description: 'Skapa motståndskraftiga kustsamhällen genom hållbar design, integrera bostäder och kommersiella ytor med klimatanpassad infrastruktur.',
         },
       },
     },

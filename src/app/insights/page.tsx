@@ -34,9 +34,9 @@ function InsightsPageContent() {
         });
 
         tl.fromTo(newsletterRef.current,
-          { 
+          {
             y: 100,       // Start lower for better "float up" effect
-            opacity: 0, 
+            opacity: 0,
             scale: 0.95   // Start slightly smaller
           },
           {
@@ -47,11 +47,11 @@ function InsightsPageContent() {
             ease: 'power3.out'
           }
         )
-        .to(newsletterRef.current, {
-          scale: 1.03,    // Expand slightly
-          duration: 0.8,  // Gentle expansion
-          ease: 'power2.out'
-        });
+          .to(newsletterRef.current, {
+            scale: 1.03,    // Expand slightly
+            duration: 0.8,  // Gentle expansion
+            ease: 'power2.out'
+          });
       }
 
       // LBYA Animation
@@ -100,7 +100,7 @@ function InsightsPageContent() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       <main className="w-full">
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex flex-col justify-end pb-24 px-6 bg-[#2E7D32]">
@@ -123,15 +123,15 @@ function InsightsPageContent() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="bg-white p-8 md:p-12">
               <div className="flex items-center justify-between mb-12 border-b border-[#2E7D32]/10 pb-4">
-                 <h2 className="text-3xl font-light text-[#2E7D32]">Latest Articles</h2>
-                 <div className="hidden md:flex gap-4 text-sm font-medium text-[#37474F]/60">
-                    <span className="text-[#2E7D32] cursor-pointer">All</span>
-                    <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Sustainability</span>
-                    <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Innovation</span>
-                    <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Projects</span>
-                 </div>
+                <h2 className="text-3xl font-light text-[#2E7D32]">Latest Articles</h2>
+                <div className="hidden md:flex gap-4 text-sm font-medium text-[#37474F]/60">
+                  <span className="text-[#2E7D32] cursor-pointer">All</span>
+                  <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Sustainability</span>
+                  <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Innovation</span>
+                  <span className="hover:text-[#2E7D32] cursor-pointer transition-colors">Projects</span>
+                </div>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                 {insights.map((insight) => (
                   <TransitionLink
@@ -144,18 +144,19 @@ function InsightsPageContent() {
                         src={insight.image}
                         alt={insight.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     </div>
 
                     <div>
                       <div className="flex items-center gap-3 mb-3">
-                         <span className="px-2 py-1 bg-[#F5F5DC] text-[#2E7D32] text-[10px] font-bold uppercase tracking-wider rounded-sm">
+                        <span className="px-2 py-1 bg-[#F5F5DC] text-[#2E7D32] text-[10px] font-bold uppercase tracking-wider rounded-sm">
                           {insight.category}
-                         </span>
-                         <span className="text-xs text-[#37474F]/40 font-medium">{insight.date}</span>
+                        </span>
+                        <span className="text-xs text-[#37474F]/40 font-medium">{insight.date}</span>
                       </div>
-                      
+
                       <h3 className="text-xl font-medium text-[#2E7D32] mb-3 group-hover:text-[#1b5e20] transition-colors leading-snug">
                         {insight.title}
                       </h3>
@@ -181,23 +182,23 @@ function InsightsPageContent() {
         <section className="py-24 bg-[#F5F5DC]">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-4xl font-light text-[#2E7D32] mb-12 text-center">Explore by Category</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="p-6 bg-white rounded-sm hover:shadow-lg transition-all cursor-pointer">
                 <h3 className="text-xl font-semibold text-[#2E7D32] mb-2">Climate</h3>
                 <p className="text-[#37474F]/70 text-sm">3 articles</p>
               </div>
-              
+
               <div className="p-6 bg-white rounded-sm hover:shadow-lg transition-all cursor-pointer">
                 <h3 className="text-xl font-semibold text-[#2E7D32] mb-2">Innovation</h3>
                 <p className="text-[#37474F]/70 text-sm">5 articles</p>
               </div>
-              
+
               <div className="p-6 bg-white rounded-sm hover:shadow-lg transition-all cursor-pointer">
                 <h3 className="text-xl font-semibold text-[#2E7D32] mb-2">Technology</h3>
                 <p className="text-[#37474F]/70 text-sm">4 articles</p>
               </div>
-              
+
               <div className="p-6 bg-white rounded-sm hover:shadow-lg transition-all cursor-pointer">
                 <h3 className="text-xl font-semibold text-[#2E7D32] mb-2">Sustainability</h3>
                 <p className="text-[#37474F]/70 text-sm">6 articles</p>
@@ -235,9 +236,9 @@ function InsightsPageContent() {
                 Our Philosophy
               </h2>
             </div>
-            
+
             <div className="w-full overflow-hidden">
-              <h2 
+              <h2
                 ref={textRef}
                 className="text-[25vw] leading-[0.8] font-bold text-[#2E7D32] tracking-tighter text-center"
                 style={{ fontFamily: "'Ruslan Display', serif" }}
